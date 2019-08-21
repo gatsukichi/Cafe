@@ -7,10 +7,10 @@ using namespace std;
 #include "BuyIngredient.h"
 #include "SellProduct.h"
 
-int menu(const char **menuList, int menuCnt); // 전달된 메뉴를 출력하고 정확한 메뉴번호를 리턴하는 
-void sellMenu(ProductList& PL, ProductTotal& PT, IngredientList& IL, MoneyBox& MB); // 상품판매 메뉴
-void buykMenu(IngredientList& IL, MoneyBox& MB); // 재고관리 메뉴 
-void viewMenu(MoneyBox& MB); // 매상관리 메뉴 
+int menu(char **menuList, int menuCnt); // 전달된 메뉴를 출력하고 정확한 메뉴번호를 리턴하는 
+void sellMenu(ProductList&, ProductTotal&, IngredientList&, MoneyBox&); // 상품판매 메뉴
+void buykMenu(IngredientList&, MoneyBox&); // 재고관리 메뉴 
+void viewMenu(MoneyBox&); // 매상관리 메뉴 
 void displayTitle(string title); // 처리중인 내용 출력하기 위한 타이틀 출력함수 
 void screen(ProductList&, ProductTotal&, IngredientList&, MoneyBox&); // 주메뉴를 출력하고 메뉴를 선택받아 반복적으로 주메뉴를 처리하는 함수
 int inputInteger(char *message);  //  message를 출력하고 정수값 입력 받아 리턴(문자, 실수값 예외 처리)
@@ -41,9 +41,9 @@ void screen(ProductList& PL, ProductTotal& PT, IngredientList& IL, MoneyBox& MB)
 		menuNum = menu(menuList, menuCnt);
 		if (menuNum == menuCnt) { break; }
 		switch (menuNum) {
-		case 1:sellMenu(ProductList& PL, ProductTotal& PT, IngredientList& IL, MoneyBox& MB) ; break;
-		case 2:buyMenu(IngredientList& IL, MoneyBox& MB); break;
-		case 3:profitMenu(MoneyBox& MB) ; break;
+		case 1:sellMenu(PL, PT, IL, MB) ; break;
+		case 2:buyMenu(IL, MB); break;
+		case 3:profitMenu(MB) ; break;
 		case 4:deadLine() ; break;
 		default: break;
 		}
@@ -52,7 +52,7 @@ void screen(ProductList& PL, ProductTotal& PT, IngredientList& IL, MoneyBox& MB)
 	return;
 }
 
-int menu(const char **menuList, int menuCnt) {
+int menu(char **menuList, int menuCnt) {
 	int i;
 	int menuNum = 0; /* 입력된 메뉴 번호 저장 변수*/
 
@@ -77,20 +77,10 @@ void sellMenu(ProductList& PL, ProductTotal& PT, IngredientList& IL, MoneyBox& M
 	displayTitle("상품 판매");
 	while (true) {
 		menuNum = menu(menuList, menuCnt);
-		cnt = inputInteger("몇 잔 판매 하시겠습니까? : ");
+		cnt = inputInteger("몇 잔 판매하시겠습니까? : ");
+		
 		if (menuNum == menuCnt) { break; }
-		switch (menuNum) {
-		case 1:
-		case 2:
-		case 3:
-		case 4:
-		case 5:
-		case 6:
-		case 7:
-		case 8:
-		case 9:
-		default:break;
-		}
+		
 	}
 	displayTitle("상품 판매 종료");
 	return;
@@ -100,16 +90,14 @@ void buyMenu(IngredientList& IL, MoneyBox& MB) {
 	char *menuList[] = {"음료 재료 구매","음식 재료 구매"};
 	int menuCnt = sizeof(menuList) / sizeof(menuList[0]);
 	int menuNum;
+	int cnt;
 	
 	displayTitle("재고 관리");
 	while (true) {
 		menuNum = menu(menuList, menuCnt);
+		cnt = inputInteger("몇 개 구매하시겠습니까? : ");
 		if (menuNum == menuCnt) { break; }
-		switch (menuNum) {
-		case 1:
-		case 2:
-		default:break;
-		}
+		
 	}
 	displayTitle("재고 관리 종료");
 	return;
