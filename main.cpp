@@ -66,7 +66,7 @@ int menu(const char **menuList, int menuCnt) {
 	return menuNum;
 }
 
-void saleMenu() {
+void sellMenu() {
 	char *menuList[] = { "아메리카노","카페라떼","카페모카","홍차","녹차","딸기에이드","레몬에이드","딸기스무디","초코스무디" };
 	int menuCnt = sizeof(menuList) / sizeof(menuList[0]);
 	int menuNum;
@@ -94,8 +94,8 @@ void saleMenu() {
 	return;
 }
 
-void stockMenu() {
-	char *menuList[] = {"음료재료 구매","음식 재료 구매"};
+void buyMenu() {
+	char *menuList[] = {"음료 재료 구매","음식 재료 구매"};
 	int menuCnt = sizeof(menuList) / sizeof(menuList[0]);
 	int menuNum;
 	displayTitle("재고 관리");
