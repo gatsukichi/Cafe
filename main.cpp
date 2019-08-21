@@ -2,6 +2,8 @@
 using namespace std;
 #include "Ingredient.h"
 #include "Product.h"
+#include "MoneyBox.h"
+#include "ProductTotal.h"
 
 int menu(const char **menuList, int menuCnt); // 전달된 메뉴를 출력하고 정확한 메뉴번호를 리턴하는 
 void saleMenu(); // 상품판매 메뉴
@@ -14,7 +16,11 @@ int inputInteger(string message); //  message를 출력하고 정수값 입력 �
 void myFlush();  // cin입력 버퍼를 모두 비우고 fail상태를 초기상태로 재설정
 void deadLine(); // 마감 처리
 int main() {
-	Product P;
+	ProductList PL;
+	IngredientList IL;
+	MoneyBox MB;
+	ProductTotal PT;
+	
 	//IngredientList IL;
 	int month_cnt;
 	cout << "운영할 개월수를 입력하시오 : ";
