@@ -29,6 +29,10 @@ public:
     int * getDrinkTot(){
         return this->DrinkTotList;
     }
+    int getDrinkTot(int index){
+        return this->DrinkTotList[index];
+    }
+
     void totalView(){
         cout << "- Drink Total -" << endl;
         for (int i = 0; i<DRINK_MAX_CNT; i++) {
