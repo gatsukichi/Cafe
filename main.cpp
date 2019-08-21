@@ -3,41 +3,36 @@ using namespace std;
 #include "Ingredient.h"
 #include "Product.h"
 
-
-int menu(char **menuList, int menuCnt); // Àü´ŞµÈ ¸Ş´º¸¦ Ãâ·ÂÇÏ°í Á¤È®ÇÑ ¸Ş´º¹øÈ£¸¦ ¸®ÅÏÇÏ´Â 
-void saleMenu(); // »óÇ°ÆÇ¸Å ¸Ş´º
-void stockMenu(); // Àç°í°ü¸® ¸Ş´º 
-void profitMenu(); // ¸Å»ó°ü¸® ¸Ş´º 
-void displayTitle(string title); // Ã³¸®ÁßÀÎ ³»¿ë Ãâ·ÂÇÏ±â À§ÇÑ Å¸ÀÌÆ² Ãâ·ÂÇÔ¼ö 
-void screen(Product &rHa); // ÁÖ¸Ş´º¸¦ Ãâ·ÂÇÏ°í ¸Ş´º¸¦ ¼±ÅÃ¹Ş¾Æ ¹İº¹ÀûÀ¸·Î ÁÖ¸Ş´º¸¦ Ã³¸®ÇÏ´Â ÇÔ¼ö
-int inputInteger(char *message);  //  message¸¦ Ãâ·ÂÇÏ°í Á¤¼ö°ª ÀÔ·Â ¹Ş¾Æ ¸®ÅÏ(¹®ÀÚ, ½Ç¼ö°ª ¿¹¿Ü Ã³¸®)
-int inputInteger(string message); //  message¸¦ Ãâ·ÂÇÏ°í Á¤¼ö°ª ÀÔ·Â ¹Ş¾Æ ¸®ÅÏ(¹®ÀÚ, ½Ç¼ö°ª ¿¹¿Ü Ã³¸®)
-void myFlush();  // cinÀÔ·Â ¹öÆÛ¸¦ ¸ğµÎ ºñ¿ì°í fail»óÅÂ¸¦ ÃÊ±â»óÅÂ·Î Àç¼³Á¤
-void deadLine(); // ¸¶°¨ Ã³¸®
-int main()
-{
-	
+int menu(char **menuList, int menuCnt); // ì „ë‹¬ëœ ë©”ë‰´ë¥¼ ì¶œë ¥í•˜ê³  ì •í™•í•œ ë©”ë‰´ë²ˆí˜¸ë¥¼ ë¦¬í„´í•˜ëŠ” 
+void saleMenu(); // ìƒí’ˆíŒë§¤ ë©”ë‰´
+void stockMenu(); // ì¬ê³ ê´€ë¦¬ ë©”ë‰´ 
+void profitMenu(); // ë§¤ìƒê´€ë¦¬ ë©”ë‰´ 
+void displayTitle(string title); // ì²˜ë¦¬ì¤‘ì¸ ë‚´ìš© ì¶œë ¥í•˜ê¸° ìœ„í•œ íƒ€ì´í‹€ ì¶œë ¥í•¨ìˆ˜ 
+void screen(Product &rHa); // ì£¼ë©”ë‰´ë¥¼ ì¶œë ¥í•˜ê³  ë©”ë‰´ë¥¼ ì„ íƒë°›ì•„ ë°˜ë³µì ìœ¼ë¡œ ì£¼ë©”ë‰´ë¥¼ ì²˜ë¦¬í•˜ëŠ” í•¨ìˆ˜
+int inputInteger(char *message);  //  messageë¥¼ ì¶œë ¥í•˜ê³  ì •ìˆ˜ê°’ ì…ë ¥ ë°›ì•„ ë¦¬í„´(ë¬¸ì, ì‹¤ìˆ˜ê°’ ì˜ˆì™¸ ì²˜ë¦¬)
+int inputInteger(string message); //  messageë¥¼ ì¶œë ¥í•˜ê³  ì •ìˆ˜ê°’ ì…ë ¥ ë°›ì•„ ë¦¬í„´(ë¬¸ì, ì‹¤ìˆ˜ê°’ ì˜ˆì™¸ ì²˜ë¦¬)
+void myFlush();  // cinì…ë ¥ ë²„í¼ë¥¼ ëª¨ë‘ ë¹„ìš°ê³  failìƒíƒœë¥¼ ì´ˆê¸°ìƒíƒœë¡œ ì¬ì„¤ì •
+void deadLine(); // ë§ˆê° ì²˜ë¦¬
+int main() {
 	Product P;
 	//IngredientList IL;
 	int month_cnt;
-	cout << "¿î¿µÇÒ °³¿ù¼ö¸¦ ÀÔ·ÂÇÏ½Ã¿À : ";
+	cout << "ìš´ì˜í•  ê°œì›”ìˆ˜ë¥¼ ì…ë ¥í•˜ì‹œì˜¤ : ";
 	cin >> month_cnt;
 	screen(P);
 	getchar(); getchar();
 	return 0;
 }
-void screen(Product &rHa)
-{
-	char *menuList[] = { "ÆÇ¸Å °ü¸®","Àç°í °ü¸®","¸Å»ó °ü¸®","¸¶°¨ ÇÏ±â" };
+
+void screen(Product &rHa) {
+	char *menuList[] = { "íŒë§¤ ê´€ë¦¬","ì¬ê³  ê´€ë¦¬","ë§¤ìƒ ê´€ë¦¬","ë§ˆê° í•˜ê¸°" };
 	int menuCnt = sizeof(menuList) / sizeof(menuList[0]);
 	int menuNum;
-	displayTitle("Ä«Æä ¿î¿µ ÇÁ·Î±×·¥");
-	while (true)
-	{
+	displayTitle("ì¹´í˜ ìš´ì˜ í”„ë¡œê·¸ë¨");
+	while (true) {
 		menuNum = menu(menuList, menuCnt);
 		if (menuNum == menuCnt) { break; }
-		switch (menuNum)
-		{
+		switch (menuNum) {
 		case 1:saleMenu() ; break;
 		case 2:stockMenu(); break;
 		case 3:profitMenu() ; break;
@@ -45,39 +40,35 @@ void screen(Product &rHa)
 		default: break;
 		}
 	}
-	displayTitle("Ä«Æä ¿î¿µ ÇÁ·Î±×·¥ Á¾·á");
+	displayTitle("ì¹´í˜ ìš´ì˜ í”„ë¡œê·¸ë¨ ì¢…ë£Œ");
 	return;
 }
-int menu(char **menuList, int menuCnt)
-{
+
+int menu(char **menuList, int menuCnt) {
 	int i;
-	int menuNum = 0; /* ÀÔ·ÂµÈ ¸Ş´º ¹øÈ£ ÀúÀå º¯¼ö*/
+	int menuNum = 0; /* ì…ë ¥ëœ ë©”ë‰´ ë²ˆí˜¸ ì €ì¥ ë³€ìˆ˜*/
 
 	cout << endl << "==================================" << endl;
-	for (i = 0; i<menuCnt; i++)
-	{
+	for (i = 0; i<menuCnt; i++) {
 		cout << i + 1 << "." << menuList[i] << endl;
 	}
 	cout << "==================================" << endl;
-	while (menuNum<1 || menuNum>menuCnt)  /* ¹üÀ§ ³»ÀÇ ¹øÈ£°¡ ÀÔ·ÂµÉ ¶§ ±îÁö ¹İº¹*/
-	{
-		menuNum = inputInteger("# ¸Ş´º¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+	while (menuNum<1 || menuNum>menuCnt) { /* ë²”ìœ„ ë‚´ì˜ ë²ˆí˜¸ê°€ ì…ë ¥ë  ë•Œ ê¹Œì§€ ë°˜ë³µ*/
+		menuNum = inputInteger("# ë©”ë‰´ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 
 	}
 	return menuNum;
 }
-void saleMenu()
-{
-	char *menuList[] = { "¾Æ¸Ş¸®Ä«³ë","Ä«Æä¶ó¶¼","Ä«Æä¸ğÄ«","È«Â÷","³ìÂ÷","µş±â¿¡ÀÌµå","·¹¸ó¿¡ÀÌµå","µş±â½º¹«µğ","ÃÊÄÚ½º¹«µğ" };
+
+void saleMenu() {
+	char *menuList[] = { "ì•„ë©”ë¦¬ì¹´ë…¸","ì¹´í˜ë¼ë–¼","ì¹´í˜ëª¨ì¹´","í™ì°¨","ë…¹ì°¨","ë”¸ê¸°ì—ì´ë“œ","ë ˆëª¬ì—ì´ë“œ","ë”¸ê¸°ìŠ¤ë¬´ë””","ì´ˆì½”ìŠ¤ë¬´ë””" };
 	int menuCnt = sizeof(menuList) / sizeof(menuList[0]);
 	int menuNum;
-	displayTitle("»óÇ° ÆÇ¸Å");
-	while (true)
-	{
+	displayTitle("ìƒí’ˆ íŒë§¤");
+	while (true) {
 		menuNum = menu(menuList, menuCnt);
 		if (menuNum == menuCnt) { break; }
-		switch (menuNum)
-		{
+		switch (menuNum) {
 		case 1:
 		case 2:
 		case 3:
@@ -90,95 +81,94 @@ void saleMenu()
 		default:break;
 		}
 	}
-	displayTitle("»óÇ° ÆÇ¸Å Á¾·á");
+	displayTitle("ìƒí’ˆ íŒë§¤ ì¢…ë£Œ");
 	return;
 }
-void stockMenu()
-{
-	char *menuList[] = {"À½·áÀç·á ±¸¸Å","À½½Ä Àç·á ±¸¸Å"};
+
+void stockMenu() {
+	char *menuList[] = {"ìŒë£Œì¬ë£Œ êµ¬ë§¤","ìŒì‹ ì¬ë£Œ êµ¬ë§¤"};
 	int menuCnt = sizeof(menuList) / sizeof(menuList[0]);
 	int menuNum;
-	displayTitle("Àç°í °ü¸®");
-	while (true)
-	{
+	displayTitle("ì¬ê³  ê´€ë¦¬");
+	while (true) {
 		menuNum = menu(menuList, menuCnt);
 		if (menuNum == menuCnt) { break; }
-		switch (menuNum)
-		{
+		switch (menuNum) {
 		case 1:
 		case 2:
 		default:break;
 		}
 	}
-	displayTitle("Àç°í °ü¸® Á¾·á");
+	displayTitle("ì¬ê³  ê´€ë¦¬ ì¢…ë£Œ");
 	return;
 }
-void profitMenu()
-{
-	char *menuList[] = { "¸Å»ó ³»¿ª","¸ñÇ¥ ¸ÅÃâ Ãâ·Â" };
+
+void profitMenu() {
+	char *menuList[] = { "ë§¤ìƒ ë‚´ì—­","ëª©í‘œ ë§¤ì¶œ ì¶œë ¥" };
 	int menuCnt = sizeof(menuList) / sizeof(menuList[0]);
 	int menuNum;
-	displayTitle("¸Å»ó °ü¸®");
-	while (true)
-	{
+	displayTitle("ë§¤ìƒ ê´€ë¦¬");
+	while (true) {
 		menuNum = menu(menuList, menuCnt);
 		if (menuNum == menuCnt) { break; }
-		switch (menuNum)
-		{
+		switch (menuNum) {
 		case 1:
 		case 2:
 		default:break;
 		}
 	}
-	displayTitle("¸Å»ó °ü¸® Á¾·á");
+	displayTitle("ë§¤ìƒ ê´€ë¦¬ ì¢…ë£Œ");
 	return;
 }
-void deadLine()
-{
+
+void deadLine() {
 
 
 }
-void displayTitle(string title) // È­¸é Å¸ÀÌÆ² Ãâ·Â ÇÔ¼ö
-{
+void displayTitle(string title) { // í™”ë©´ íƒ€ì´í‹€ ì¶œë ¥ í•¨ìˆ˜ 
 	cout << endl << "------------------------------" << endl;
 	cout << "    " << title << endl;
 	cout << "------------------------------" << endl;
 }
-// message¸¦ Ãâ·ÂÇÏ°í Á¤¼ö°ª ÀÔ·Â ¹Ş¾Æ ¸®ÅÏ(¹®ÀÚ, ½Ç¼ö°ª ¿¹¿Ü Ã³¸®)
-int inputInteger(char *message)
-{
+
+// messageë¥¼ ì¶œë ¥í•˜ê³  ì •ìˆ˜ê°’ ì…ë ¥ ë°›ì•„ ë¦¬í„´(ë¬¸ì, ì‹¤ìˆ˜ê°’ ì˜ˆì™¸ ì²˜ë¦¬)
+int inputInteger(char *message) {
 	int number;
 
-	while (1){
+	while (1) {
 		cout << message;
 		cin >> number;
 
-		if (cin.get() == '\n'){
+		if (cin.get() == '\n') {
 			return number;
 		}
 
 		myFlush();
 	}
 }
-// message¸¦ Ãâ·ÂÇÏ°í Á¤¼ö°ª ÀÔ·Â ¹Ş¾Æ ¸®ÅÏ(¹®ÀÚ, ½Ç¼ö°ª ¿¹¿Ü Ã³¸®)
-int inputInteger(string message)
-{
+
+// messageë¥¼ ì¶œë ¥í•˜ê³  ì •ìˆ˜ê°’ ì…ë ¥ ë°›ì•„ ë¦¬í„´(ë¬¸ì, ì‹¤ìˆ˜ê°’ ì˜ˆì™¸ ì²˜ë¦¬)
+int inputInteger(string message) {
 	int number;
 
-	while (1){
+	while (1) {
 		cout << message;
 		cin >> number;
 
-		if (cin.get() == '\n'){
+		if (cin.get() == '\n') {
 			return number;
 		}
 
 		myFlush();
 	}
 }
-// ±â´É : cinÀÔ·Â ¹öÆÛ¸¦ ¸ğµÎ ºñ¿ì°í fail»óÅÂ¸¦ ÃÊ±â»óÅÂ·Î Àç¼³Á¤
-void myFlush()
-{
-	cin.clear();  // ¿¡·¯·Î ¼³Á¤µÇ¾îÀÖ´Â flag¸â¹öÀÇ °ªÀ» 0À¸·Î ÀçÃÊ±âÈ­
-	while (cin.get() != '\n');  // °³Çà¹®ÀÚ°¡ ³ª¿Ã¶§±îÁö ¹öÆÛ³»ÀÇ ¸ğµç ¹®ÀÚ Áö¿ò
+
+// ê¸°ëŠ¥ : cinì…ë ¥ ë²„í¼ë¥¼ ëª¨ë‘ ë¹„ìš°ê³  failìƒíƒœë¥¼ ì´ˆê¸°ìƒíƒœë¡œ ì¬ì„¤ì •
+void myFlush() {
+	cin.clear();  // ì—ëŸ¬ë¡œ ì„¤ì •ë˜ì–´ìˆëŠ” flagë©¤ë²„ì˜ ê°’ì„ 0ìœ¼ë¡œ ì¬ì´ˆê¸°í™”
+	while (cin.get() != '\n') {
+		;  // ê°œí–‰ë¬¸ìê°€ ë‚˜ì˜¬ë•Œê¹Œì§€ ë²„í¼ë‚´ì˜ ëª¨ë“  ë¬¸ì ì§€ì›€
+	}
+	
+	return ;
 }
