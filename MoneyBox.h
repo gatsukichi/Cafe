@@ -49,6 +49,6 @@ public:
 	}
 	void accumulateSellM(int SellM)
 	{
-		this->setSellM(this->getSellM() + SellM);
+		this->sellM = this->sellM + SellM;
 	}
 };
