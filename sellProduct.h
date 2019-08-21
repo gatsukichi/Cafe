@@ -5,7 +5,7 @@
 
 class SellProduct {
 public:
-	int sellCountUp(ProductList &PL, int count, int index) {
+	int ProductCntIncreament(ProductList &PL, int count, int index) {
 		int sellM;
 		switch (index) {
 		case 1:sellM = PL.getAmericanoPrice() * count; break;
@@ -23,7 +23,7 @@ public:
 		return sellM;
 	}
 
-	void sellCountUp(IngredientList &IL, int count, int index) { //재료리스트 (재료가 빠져야하니까), 카운트는 몇잔샀는지에 따라서 빠져야하니까, 인덱스는 뭘 샀는지 알아야하니까
+	void IngredientCntDecreament(IngredientList &IL, int count, int index) { //재료리스트 (재료가 빠져야하니까), 카운트는 몇잔샀는지에 따라서 빠져야하니까, 인덱스는 뭘 샀는지 알아야하니까
 		switch (index) {
 		case 1:
 
@@ -35,7 +35,7 @@ public:
 		IngredientList.setCoffeeBeanCount(count)
 	}
 
-	void setMoney(&MoneyBox MB, int sellM) {
+	void MoneyIncreament(&MoneyBox MB, int sellM) {
 		MoneyBox.setSellM(돈);
 	}
 
