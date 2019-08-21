@@ -36,8 +36,7 @@ public:
 	}
 
 	void MoneyIncreament(MoneyBox &MB, int sellM) {
-		MB.setSellM(MB.getSellM() + sellM);
+		MB.accumulateSellM(sellM);
 	}
-
-
+	
 };
