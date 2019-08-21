@@ -46,6 +46,6 @@ public:
 		this->sellM += SellM;
 	}
 	void accumulateBuyM(int BuyM){
-		this->buyM = this->buyM + BuyM;
+		this->buyM += BuyM;
 	}
 };
