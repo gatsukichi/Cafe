@@ -154,5 +154,37 @@ public:
     void decreaseSugarGram(double gram) {
         sugar.decreaseSugarGram(gram);
     }
-
+	void increaseCoffeeBeanGram(double gram) {
+        coffeebean.increaseCoffeeBeanGram(gram);
+    }
+    void increaseMilkGram(double gram) {
+        milk.increaseMilkGram(gram);
+    }
+    void increaseChocoGram(double gram) {
+        choco.increaseChocoGram(gram);
+    }
+    void increaseBlackTeaBagGram(double gram) {
+        blackteabag.increaseBlackTeaBagGram(gram);
+    }
+    void increaseGreenTeaBagGram(double gram) {
+        greenteabag.increaseGreenTeaBagGram(gram);
+    }
+    void increaseCiderGram(double gram) {
+        cider.increaseCiderGram(gram);
+    }
+    void increaseStrawberryGram(double gram) {
+        strawberry.increaseStrawberryGram(gram);
+    }
+    void increaseLemonGram(double gram) {
+        lemon.increaseLemonGram(gram);
+    }
+    void increaseEggCount(int count) {
+        egg.increaseEggCount(count);
+    }
+    void increaseFlourGram(double gram) {
+        flour.increaseFlourGram(gram);
+    }
+    void increaseSugarGram(double gram) {
+        sugar.increaseSugarGram(gram);
+    }
 };
