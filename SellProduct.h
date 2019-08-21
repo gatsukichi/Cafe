@@ -47,7 +47,7 @@ public:
                 IL.decreaseStrawberryGram(DE_STRAWBERRY*count);
                 break;
             case 7: // 레모네이드
-                IL.decreaseStrawberryGram(DE_STRAWBERRY*count);
+                IL.decreaseLemonGram(DE_LEMON*count);
                 IL.decreaseCiderGram(DE_CIDER*count);
                 break;
             case 8: // 딸기스무디
