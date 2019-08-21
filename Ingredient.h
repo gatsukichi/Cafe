@@ -4,15 +4,16 @@ private:
     double gram;
     int price;
 public:
-    CoffeeBean(){};
-    CoffeeBean(double gram){};
-    ~CoffeeBean(){};
     double getCoffeeBeanGram() const{
         return this->gram;
+    }
+    int getCoffeeBeanPrice() const{
+        return this->price;
     }
     void setCoffeeBeanGram(double gram){
         this->gram = gram;
     }
+    
 };
 
 class Milk{
@@ -20,11 +21,11 @@ private:
     double gram;
     int price;
 public:
-    Milk();
-    Milk(double gram);
-    ~Milk(){}
     double getMilkGram() const{
         return this->gram;
+    }
+    int getMilkPrice() const{
+        return this->price;
     }
     void setMilkGram(double gram){
         this->gram = gram;
@@ -37,11 +38,11 @@ private:
     double gram;
     int price;
 public:
-    Choco();
-    Choco(double gram);
-    ~Choco(){}
     double getChocoGram() const{
         return this->gram;
+    }
+    int getChocoPrice() const{
+        return this->price;
     }
     void setChocoGram(double gram){
         this->gram = gram;
@@ -53,11 +54,11 @@ private:
     double gram;
     int price;
 public:
-    BlackTeaBag();
-    BlackTeaBag(double gram);
-    ~BlackTeaBag(){}
     double getBlackTeaBagGram() const{
         return this->gram;
+    }
+    int getBlackTeaBagPrice() const{
+        return this->price;
     }
     void setBlackTeaBagGram(double gram){
         this->gram = gram;
@@ -70,11 +71,11 @@ private:
     double gram;
     int price;
 public:
-    GreenTeaBag();
-    GreenTeaBag(double gram);
-    ~GreenTeaBag(){}
     double getGreenTeaBagGram() const{
         return this->gram;
+    }
+    int getGreenTeaBagPrice() const{
+        return this->price;
     }
     void setGreenTeaBagGram(double gram){
         this->gram = gram;
@@ -86,11 +87,11 @@ private:
     double gram;
     int price;
 public:
-    Cider();
-    Cider(double gram);
-    ~Cider(){}
     double getCiderGram() const{
         return this->gram;
+    }
+    int getCiderPrice() const{
+        return this->price;
     }
     void setCiderGram(double gram){
         this->gram = gram;
@@ -102,11 +103,11 @@ private:
     double gram;
     int price;
 public:
-    Strawberry();
-    Strawberry(double gram);
-    ~Strawberry(){}
     double getStrawberryGram() const{
         return this->gram;
+    }
+    int getStrawberryPirce() const{
+        return this->price;
     }
     void setStrawberryGram(double gram){
         this->gram = gram;
@@ -118,11 +119,11 @@ private:
     double gram;
     int price;
 public:
-    Lemon();
-    Lemon(double gram);
-    ~Lemon(){}
     double getLemonGram() const{
         return this->gram;
+    }
+    int getLemonPrice() const{
+        return this->price;
     }
     void setLemonGram(double gram){
         this->gram = gram;
@@ -135,17 +136,14 @@ private:
     int count;
     int price;
 public:
-	int getEggCount() const
-	{
+	int getEggCount() const{
 		return this->count;
 	}
-	void setEggCount(int count)
-	{
+    int getEggPrice() const{
+        return this->price;
+    }
+	void setEggCount(int count){
 		this->count = count;
-	}
-	int getEggPrice() const
-	{
-		return this->price;
 	}
 };
 
@@ -154,34 +152,28 @@ private:
     double gram;
     int price;
 public:
-	int getFlourGram() const
-	{
+	int getFlourGram() const{
 		return this->gram;
 	}
-	void setFlourGram(int gram)
-	{
-		this->gram = gram;
-	}
-	int getFlourPrice() const
-	{
+	int getFlourPrice() const{
 		return this->price;
 	}
+    void setFlourGram(int gram){
+        this->gram = gram;
+    }
 };
 class Sugar {
 private:
     double gram;
     int price;
 public:
-	int getSugarGram() const
-	{
+	int getSugarGram() const{
 		return this->gram;
 	}
-	void setSugarGram(int gram)
-	{
-		this->gram = gram;
-	}
-	int getSugarPrice() const
-	{
+	int getSugarPrice() const{
 		return this->price;
 	}
+    void setSugarGram(int gram){
+        this->gram = gram;
+    }
 };
