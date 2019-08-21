@@ -4,9 +4,9 @@ using namespace std;
 class MoneyBox {
 private:
 	int sellM; // 매출
-	int tax; // 세금 = 매출의 10퍼??
 	int buyM; // 재고구입비
-	int profit; // 순수익 = 매출 - (세금+재고구입비)
+	int tax = sellM * 0.1; //10% // 세금 = 매출의 10퍼??
+	int profit = sellM - (buyM + tax); // 순수익 = 매출 - (세금+재고구입비)
 public:
 	//getter
 	int getSellM() const {
@@ -40,12 +40,6 @@ public:
 		cout << "Tax : " << this->tax << endl;
 		cout << "Purchase : " << this->buyM << endl;
 		cout << "Profit : " << this->profit << endl;
-	}
-	void calcTax() {
-		this->tax = this->sellM * 0.1; //10%
-	}
-	void calcProfit() { // 매출 - (세금+재고구매비)
-		this->profit = this->sellM - (this->tax + this->buyM);
 	}
 	void accumulateSellM(int SellM)
 	{
