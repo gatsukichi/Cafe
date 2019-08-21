@@ -23,17 +23,45 @@ public:
 		return sellM;
 	}
 
-	void IngredientCntDecreament(IngredientList &IL, int count, int index) { //재료리스트 (재료가 빠져야하니까), 카운트는 몇잔샀는지에 따라서 빠져야하니까, 인덱스는 뭘 샀는지 알아야하니까
-		switch (index) {
-		case 1:
-
-
-
-		default:
-			break;
-		}
-		IngredientList.setCoffeeBeanCount(count)
-	}
+	void IngredientCntDecreament(IngredientList& IL, int index, int count) { //재료리스트 (재료가 빠져야하니까), 카운트는 몇잔샀는지에 따라서 빠져야하니까, 인덱스는 뭘 샀는지 알아야하니까
+        switch (index) {
+            case 1: // 아메리카노
+                IL.decreaseCoffeeBeanGram(DE_COFFEEBEAN*count);
+                break;
+            case 2: // 카페라떼
+                IL.decreaseCoffeeBeanGram(DE_COFFEEBEAN*count);
+                IL.decreaseMilkGram(DE_MILK*count);
+                break;
+            case 3: // 카페모카
+                IL.decreaseCoffeeBeanGram(DE_COFFEEBEAN*count);
+                IL.decreaseChocoGram(DE_CHOCO*count);
+                break;
+            case 4: // 녹차
+                IL.decreaseGreenTeaBagGram(DE_GREENTEABAG*count);
+                break;
+            case 5: // 홍차
+                IL.decreaseBlackTeaBagGram(DE_BLACKTEABAG*count);
+                break;
+            case 6: // 딸기에이드
+                IL.decreaseCiderGram(DE_CIDER*count);
+                IL.decreaseStrawberryGram(DE_STRAWBERRY*count);
+                break;
+            case 7: // 레모네이드
+                IL.decreaseStrawberryGram(DE_STRAWBERRY*count);
+                IL.decreaseCiderGram(DE_CIDER*count);
+                break;
+            case 8: // 딸기스무디
+                IL.decreaseMilkGram(DE_MILK*count);
+                IL.decreaseStrawberryGram(DE_STRAWBERRY*count);
+                break;
+            case 9: // 초코스무디
+                IL.decreaseChocoGram(DE_CHOCO*count);
+                IL.decreaseMilkGram(DE_MILK*count);
+                break;
+            default:
+                break;
+        }
+    }
 
 	void MoneyIncreament(MoneyBox &MB, int sellM) {
 		MB.accumulateSellM(sellM);
