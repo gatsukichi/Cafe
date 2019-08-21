@@ -4,7 +4,7 @@ using namespace std;
 #include "ProductTotal.h"
 #include "Ingredient.h"
 #include "MoneyBox.h"
-#include "BuyProduct.h"
+#include "BuyIngredient.h"
 #include "SellProduct.h"
 
 int menu(const char **menuList, int menuCnt); // 전달된 메뉴를 출력하고 정확한 메뉴번호를 리턴하는 
