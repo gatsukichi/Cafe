@@ -17,7 +17,12 @@ public:
     void setCoffeeBeanGram(double gram){
         this->gram = gram;
     }
-    
+	void decreaseCoffeeBeanGram(double gram){
+        this->gram -= gram;
+    }
+    void increaseCoffeeBeanGram(double gram){
+        this->gram += gram;
+    }
 };
 
 class Milk{
@@ -37,6 +42,12 @@ public:
     }
     void setMilkGram(double gram){
         this->gram = gram;
+    }
+	    void decreaseMilkGram(double gram){
+        this->gram -= gram;
+    }
+    void increaseMilkGram(double gram){
+        this->gram += gram;
     }
 };
 
@@ -59,6 +70,12 @@ public:
     void setChocoGram(double gram){
         this->gram = gram;
     }
+	    void decreaseChocoGram(double gram){
+        this->gram -= gram;
+    }
+    void increaseChocoGram(double gram){
+        this->gram += gram;
+    }
 };
 
 class BlackTeaBag{
@@ -78,6 +95,12 @@ public:
     }
     void setBlackTeaBagGram(double gram){
         this->gram = gram;
+    }
+	    void decreaseBlackTeaBagGram(double gram){
+        this->gram -= gram;
+    }
+    void increaseBlackTeaBagGram(double gram){
+        this->gram += gram;
     }
 };
 
@@ -100,6 +123,12 @@ public:
     void setGreenTeaBagGram(double gram){
         this->gram = gram;
     }
+	    void decreaseGreenTeaBagGram(double gram){
+        this->gram -= gram;
+    }
+    void increaseGreenTeaBagGram(double gram){
+        this->gram += gram;
+    }
 };
 
 class Cider{
@@ -119,6 +148,12 @@ public:
     }
     void setCiderGram(double gram){
         this->gram = gram;
+    }
+	    void decreaseCiderGram(double gram){
+        this->gram -= gram;
+    }
+    void increaseCiderGram(double gram){
+        this->gram += gram;
     }
 };
 
@@ -140,6 +175,12 @@ public:
     void setStrawberryGram(double gram){
         this->gram = gram;
     }
+	    void decreaseStrawberryGram(double gram){
+        this->gram -= gram;
+    }
+    void increaseStrawberryGram(double gram){
+        this->gram += gram;
+    }
 };
 
 class Lemon{
@@ -160,8 +201,13 @@ public:
     void setLemonGram(double gram){
         this->gram = gram;
     }
+	    void decreaseLemonGram(double gram){
+        this->gram -= gram;
+    }
+    void increaseLemonGram(double gram){
+        this->gram += gram;
+    }
 };
-
 
 class Egg {
 private:
@@ -181,8 +227,13 @@ public:
 	void setEggCount(int count){
 		this->count = count;
 	}
+	    void decreaseEggCount(int count){
+        this->count -= count;
+    }
+    void increaseEggCount(int count){
+        this->count += count;
+    }
 };
-
 class Flour {
 private:
     double gram;
@@ -200,6 +251,12 @@ public:
 	}
     void setFlourGram(int gram){
         this->gram = gram;
+    }
+	    void decreaseFlourGram(double gram){
+        this->gram -= gram;
+    }
+    void increaseFlourGram(double gram){
+        this->gram += gram;
     }
 };
 class Sugar {
@@ -219,5 +276,11 @@ public:
 	}
     void setSugarGram(int gram){
         this->gram = gram;
+    }
+	    void decreaseSugarGram(double gram){
+        this->gram -= gram;
+    }
+    void increaseSugarGram(double gram){
+        this->gram += gram;
     }
 };
