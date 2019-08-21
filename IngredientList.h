@@ -120,4 +120,39 @@ public:
 	void setSugarGram(double gram) {
 		sugar.setSugarGram(gram);
 	}
+	
+	void decreaseCoffeeBeanGram(double gram) {
+        coffeebean.decreaseCoffeeBeanGram(gram);
+    }
+    void decreaseMilkGram(double gram) {
+        milk.decreaseMilkGram(gram);
+    }
+    void decreaseChocoGram(double gram) {
+        choco.decreaseChocoGram(gram);
+    }
+    void decreaseBlackTeaBagGram(double gram) {
+        blackteabag.decreaseBlackTeaBagGram(gram);
+    }
+    void decreaseGreenTeaBagGram(double gram) {
+        greenteabag.decreaseGreenTeaBagGram(gram);
+    }
+    void decreaseCiderGram(double gram) {
+        cider.decreaseCiderGram(gram);
+    }
+    void decreaseStrawberryGram(double gram) {
+        strawberry.decreaseStrawberryGram(gram);
+    }
+    void decreaseLemonGram(double gram) {
+        lemon.decreaseLemonGram(gram);
+    }
+    void decreaseEggCount(int count) {
+        egg.decreaseEggCount(count);
+    }
+    void decreaseFlourGram(double gram) {
+        flour.decreaseFlourGram(gram);
+    }
+    void decreaseSugarGram(double gram) {
+        sugar.decreaseSugarGram(gram);
+    }
+
 };
