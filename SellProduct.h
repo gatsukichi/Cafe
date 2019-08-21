@@ -2,6 +2,18 @@
 #include "IngredientList.h"
 #include "MoneyBox.h"
 #include "ProductList.h"
+#define DE_COFFEEBEAN
+#define DE_MILK
+#define DE_CHOCO
+#define DE_BLACKTEABAG
+#define DE_GREENTEABAG
+#define DE_CIDER
+#define DE_STRAWBERRY
+#define DE_LEMON
+#define DE_EGG
+#define DE_FLOUR
+#define DE_SUGAR
+
 
 class SellProduct {
 public:
