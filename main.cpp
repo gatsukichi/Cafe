@@ -10,7 +10,7 @@ void saleMenu(); // 상품판매 메뉴
 void stockMenu(); // 재고관리 메뉴 
 void profitMenu(); // 매상관리 메뉴 
 void displayTitle(string title); // 처리중인 내용 출력하기 위한 타이틀 출력함수 
-void screen(Product); // 주메뉴를 출력하고 메뉴를 선택받아 반복적으로 주메뉴를 처리하는 함수
+void screen(ProductList&, ProductTotal&, IngredientList&, MoneyBox&); // 주메뉴를 출력하고 메뉴를 선택받아 반복적으로 주메뉴를 처리하는 함수
 int inputInteger(char *message);  //  message를 출력하고 정수값 입력 받아 리턴(문자, 실수값 예외 처리)
 int inputInteger(string message); //  message를 출력하고 정수값 입력 받아 리턴(문자, 실수값 예외 처리)
 void myFlush();  // cin입력 버퍼를 모두 비우고 fail상태를 초기상태로 재설정
