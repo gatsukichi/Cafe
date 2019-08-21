@@ -1,4 +1,5 @@
 #pragma once
+
 class CoffeeBean{
 private:
     double gram;
