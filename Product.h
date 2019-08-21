@@ -1,179 +1,98 @@
-class Americano { // Ä¿ÇÇ
+class Americano { // ì»¤í”¼
 private:
 	int price = 5000;
-	int count;
 	//    bool ice;
 	//    bool whipping;
 public:
-	int getCount() const
-	{
-		return this->count;
-	};
-	void setCount(int count)
-	{
-		this->count = count;
-	};
-	int getPrice() const
+	int getAmericanoPrice() const
 	{
 		return this->price;
 	};
 };
-class BlackTea { //ºí·¢Æ¼¹é
+class BlackTea { //ë¸”ëž™í‹°ë°±
 private:
 	int price;
-	int count;
 	//    bool ice;
 	//    bool whipping;
 public:
-	int getCount() const
-	{
-		return this->count;
-	}
-	void setCount(int count)
-	{
-		this->count = count;
-	}
-	int getPrice() const
+	int getBlackTeaPrice() const
 	{
 		return this->price;
 	}
 };
-class CaffeMocha { // Ä¿ÇÇ+ÃÊÄÚ
+class CaffeMocha { // ì»¤í”¼+ì´ˆì½”
 private:
 	int price;
-	int count;
 	//    bool ice;
 	//    bool whipping;
 public:
-	int getCount() const
-	{
-		return this->count;
-	}
-	void setCount(int count)
-	{
-		this->count = count;
-	}
-	int getPrice() const
+	int getCaffeMochaPrice() const
 	{
 		return this->price;
 	}
 };
-class CaffeLatte { // Ä¿ÇÇ+¿ìÀ¯
+class CaffeLatte { // ì»¤í”¼+ìš°ìœ 
 private:
 	int price;
-	int count;
 	//    bool ice;
 	//    bool whipping;
 public:
-	int getCount() const
-	{
-		return this->count;
-	}
-	void setCount(int count)
-	{
-		this->count = count;
-	}
-	int getPrice() const
+	int getCaffeLattePrice() const
 	{
 		return this->price;
 	}
 };
-class ChocoSmoothie { // ÃÊÄÚ + ¿ìÀ¯
+class ChocoSmoothie { // ì´ˆì½” + ìš°ìœ 
 private:
 	int price;
-	int count;
 	//    bool ice;
 	//    bool whipping;
 public:
-	int getCount() const
-	{
-		return this->count;
-	}
-	void setCount(int count)
-	{
-		this->count = count;
-	}
-	int getPrice() const
+	int getChocoSmoothiePrice() const
 	{
 		return this->price;
 	}
 };
-class GreenTea { // ±×¸°Æ¼¹é
+class GreenTea { // ê·¸ë¦°í‹°ë°±
 private:
 	int price;
-	int count;
 	//    bool ice;
 	//    bool whipping;
 public:
-	int getCount() const
-	{
-		return this->count;
-	}
-	void setCount(int count)
-	{
-		this->count = count;
-	}
-	int getPrice() const
+	int getGreenTeaPrice() const
 	{
 		return this->price;
 	}
 };
-class LemonAde { // ·¹¸ó + »çÀÌ´Ù
+class LemonAde { // ë ˆëª¬ + ì‚¬ì´ë‹¤
 private:
 	int price;
-	int count;
 	//    bool ice;
 	//    bool whipping;
 public:
-	int getCount() const
-	{
-		return this->count;
-	}
-	void setCount(int count)
-	{
-		this->count = count;
-	}
-	int getPrice() const
+	int getLemonAdePrice() const
 	{
 		return this->price;
 	}
 };
-class StrawberryAde { // µþ±â + »çÀÌ´Ù
+class StrawberryAde { // ë”¸ê¸° + ì‚¬ì´ë‹¤
 private:
 	int price;
-	int count;
 	//    bool ice;
 	//    bool whipping;
 public:
-	int getCount() const
-	{
-		return this->count;
-	}
-	void setCount(int count)
-	{
-		this->count = count;
-	}
-	int getPrice() const
+	int getStrawberrtAdePrice() const
 	{
 		return this->price;
 	}
 };
-class StrawberrySmoothie { // µþ±â + ¿ìÀ¯
+class StrawberrySmoothie { // ë”¸ê¸° + ìš°ìœ 
 private:
 	int price;
-	int count;
 	//    bool ice;
 	//    bool whipping;
 public:
-	int getCount() const
-	{
-		return this->count;
-	}
-	void setCount(int count)
-	{
-		this->count = count;
-	}
-	int getPrice() const
+	int getStrawberrySmoothiePrice() const
 	{
 		return this->price;
 	}
