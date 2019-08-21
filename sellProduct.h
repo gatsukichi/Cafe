@@ -35,8 +35,8 @@ public:
 		IngredientList.setCoffeeBeanCount(count)
 	}
 
-	void MoneyIncreament(&MoneyBox MB, int sellM) {
-		MoneyBox.setSellM(돈);
+	void MoneyIncreament(MoneyBox &MB, int sellM) {
+		MB.setSellM(MB.getSellM() + sellM);
 	}
 
 
