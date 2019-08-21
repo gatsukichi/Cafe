@@ -18,7 +18,7 @@ private:
 	Sugar sugar;
     
 public:
-
+	IngredientList() {}
 	double getCoffeeBeanGram() const {
 		return coffeebean.getCoffeeBeanGram();
 	}
