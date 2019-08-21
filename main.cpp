@@ -8,9 +8,9 @@ using namespace std;
 #include "SellProduct.h"
 
 int menu(const char **menuList, int menuCnt); // 전달된 메뉴를 출력하고 정확한 메뉴번호를 리턴하는 
-void saleMenu(); // 상품판매 메뉴
-void stockMenu(); // 재고관리 메뉴 
-void profitMenu(); // 매상관리 메뉴 
+void sellMenu(ProductList& PL, ProductTotal& PT, IngredientList& IL, MoneyBox& MB); // 상품판매 메뉴
+void buykMenu(IngredientList& IL, MoneyBox& MB); // 재고관리 메뉴 
+void viewMenu(MoneyBox& MB); // 매상관리 메뉴 
 void displayTitle(string title); // 처리중인 내용 출력하기 위한 타이틀 출력함수 
 void screen(ProductList&, ProductTotal&, IngredientList&, MoneyBox&); // 주메뉴를 출력하고 메뉴를 선택받아 반복적으로 주메뉴를 처리하는 함수
 int inputInteger(char *message);  //  message를 출력하고 정수값 입력 받아 리턴(문자, 실수값 예외 처리)
@@ -115,7 +115,7 @@ void buyMenu(IngredientList& IL, MoneyBox& MB) {
 	return;
 }
 
-void profitMenu(MoneyBox& MB) {
+void viewMenu(MoneyBox& MB) {
 	char *menuList[] = { "매상 내역","목표 매출 출력" };
 	int menuCnt = sizeof(menuList) / sizeof(menuList[0]);
 	int menuNum;
