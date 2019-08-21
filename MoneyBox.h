@@ -44,5 +44,8 @@ public:
     void calcTax(){
         this->tax = this->sales * 0.1; //10%
     }
+    void calcProfit(){ // 매출 - (세금+재고구매비)
+        this->profit = this->sales - (this->tax + this->purchase);
+    }
 
 };
