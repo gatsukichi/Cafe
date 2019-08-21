@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 #include"Ingredient.h"
-class Ingrediant {
+class IngredientList {
 
 private:
 
@@ -16,9 +16,10 @@ private:
 	Egg egg;
 	Flour flour;
 	Sugar sugar;
+    
 public:
 
-	int getCoffeeBeanGram() const {
+	double getCoffeeBeanGram() const {
 		return coffeebean.getCoffeeBeanGram();
 	}
 	double getMilkGram() const {
@@ -42,7 +43,7 @@ public:
 	double getLemonGram() const {
 		return lemon.getLemonGram();
 	}
-	double getEggCount() const {
+	int getEggCount() const {
 		return egg.getEggCount();
 	}
 	double getFlourGram() const {
@@ -51,6 +52,41 @@ public:
 	double getSugarGram() const {
 		return sugar.getSugarGram();
 	}
+    
+    int getCoffeeBeanPrice() const {
+        return coffeebean.getCoffeeBeanPrice();
+    }
+    int getMilkPrice() const {
+        return milk.getMilkPrice();
+    }
+    int getChocoPrice() const {
+        return choco.getChocoGram();
+    }
+    int getBlackTeaBagPrice() const {
+        return blackteabag.getBlackTeaBagPrice();
+    }
+    int getGreenTeaBagPrice() const {
+        return greenteabag.getGreenTeaBagPrice();
+    }
+    int getCiderPrice() const {
+        return cider.getCiderPrice();
+    }
+    int getStrawberryPrice() const {
+        return strawberry.getStrawberryPrice();
+    }
+    int getLemonPrice() const {
+        return lemon.getLemonPrice();
+    }
+    int getEggPrice() const {
+        return egg.getEggPrice();
+    }
+    int getFlourPrice() const {
+        return flour.getFlourPrice();
+    }
+    int getSugarPrice() const {
+        return sugar.getSugarPrice();
+    }
+
 	void setCoffeeBeanGram(double gram) {
 		coffeebean.setCoffeeBeanGram(gram);
 	}
