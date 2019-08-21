@@ -4,6 +4,8 @@ using namespace std;
 #include "ProductTotal.h"
 #include "Ingredient.h"
 #include "MoneyBox.h"
+#include "BuyProduct.h"
+#include "SellProduct.h"
 
 int menu(const char **menuList, int menuCnt); // 전달된 메뉴를 출력하고 정확한 메뉴번호를 리턴하는 
 void saleMenu(); // 상품판매 메뉴
@@ -39,9 +41,9 @@ void screen(ProductList& PL, ProductTotal& PT, IngredientList& IL, MoneyBox& MB)
 		menuNum = menu(menuList, menuCnt);
 		if (menuNum == menuCnt) { break; }
 		switch (menuNum) {
-		case 1:sellMenu() ; break;
-		case 2:buyMenu(); break;
-		case 3:profitMenu() ; break;
+		case 1:sellMenu(ProductList& PL, ProductTotal& PT, IngredientList& IL, MoneyBox& MB) ; break;
+		case 2:buyMenu(IngredientList& IL, MoneyBox& MB); break;
+		case 3:profitMenu(MoneyBox& MB) ; break;
 		case 4:deadLine() ; break;
 		default: break;
 		}
@@ -66,7 +68,7 @@ int menu(const char **menuList, int menuCnt) {
 	return menuNum;
 }
 
-void sellMenu() {
+void sellMenu(ProductList& PL, ProductTotal& PT, IngredientList& IL, MoneyBox& MB) {
 	char *menuList[] = { "아메리카노","카페라떼","카페모카","홍차","녹차","딸기에이드","레몬에이드","딸기스무디","초코스무디" };
 	int menuCnt = sizeof(menuList) / sizeof(menuList[0]);
 	int menuNum;
@@ -94,7 +96,7 @@ void sellMenu() {
 	return;
 }
 
-void buyMenu() {
+void buyMenu(IngredientList& IL, MoneyBox& MB) {
 	char *menuList[] = {"음료 재료 구매","음식 재료 구매"};
 	int menuCnt = sizeof(menuList) / sizeof(menuList[0]);
 	int menuNum;
@@ -113,7 +115,7 @@ void buyMenu() {
 	return;
 }
 
-void profitMenu() {
+void profitMenu(MoneyBox& MB) {
 	char *menuList[] = { "매상 내역","목표 매출 출력" };
 	int menuCnt = sizeof(menuList) / sizeof(menuList[0]);
 	int menuNum;
@@ -122,8 +124,8 @@ void profitMenu() {
 		menuNum = menu(menuList, menuCnt);
 		if (menuNum == menuCnt) { break; }
 		switch (menuNum) {
-		case 1:
-		case 2:
+		case 1: MB.stateView();
+		case 2: 
 		default:break;
 		}
 	}
