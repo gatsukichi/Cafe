@@ -9,13 +9,13 @@ public:
 		return this->price;
 	};
 };
-class BlackTea { //블랙티백
+class CaffeLatte { // 커피+우유
 private:
 	int price;
 	//    bool ice;
 	//    bool whipping;
 public:
-	int getBlackTeaPrice() const
+	int getCaffeLattePrice() const
 	{
 		return this->price;
 	}
@@ -31,28 +31,6 @@ public:
 		return this->price;
 	}
 };
-class CaffeLatte { // 커피+우유
-private:
-	int price;
-	//    bool ice;
-	//    bool whipping;
-public:
-	int getCaffeLattePrice() const
-	{
-		return this->price;
-	}
-};
-class ChocoSmoothie { // 초코 + 우유
-private:
-	int price;
-	//    bool ice;
-	//    bool whipping;
-public:
-	int getChocoSmoothiePrice() const
-	{
-		return this->price;
-	}
-};
 class GreenTea { // 그린티백
 private:
 	int price;
@@ -64,13 +42,13 @@ public:
 		return this->price;
 	}
 };
-class LemonAde { // 레몬 + 사이다
+class BlackTea { //블랙티백
 private:
 	int price;
 	//    bool ice;
 	//    bool whipping;
 public:
-	int getLemonAdePrice() const
+	int getBlackTeaPrice() const
 	{
 		return this->price;
 	}
@@ -86,6 +64,17 @@ public:
 		return this->price;
 	}
 };
+class LemonAde { // 레몬 + 사이다
+private:
+	int price;
+	//    bool ice;
+	//    bool whipping;
+public:
+	int getLemonAdePrice() const
+	{
+		return this->price;
+	}
+};
 class StrawberrySmoothie { // 딸기 + 우유
 private:
 	int price;
@@ -93,6 +82,17 @@ private:
 	//    bool whipping;
 public:
 	int getStrawberrySmoothiePrice() const
+	{
+		return this->price;
+	}
+};
+class ChocoSmoothie { // 초코 + 우유
+private:
+	int price;
+	//    bool ice;
+	//    bool whipping;
+public:
+	int getChocoSmoothiePrice() const
 	{
 		return this->price;
 	}
