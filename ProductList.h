@@ -16,32 +16,32 @@ private:
     StrawberrySmoothie strawberrysmoothie;
     ChocoSmoothie chocosmoothie;
 public:
-    int Product::getAmericanoPrice() const{
-        return this->americano.getPrice();
+    int getAmericanoPrice() const{
+        return this->americano.getAmericanoPrice();
     }
-    int Product::getCaffeLattePrice() const{
-        return this->cafelatte.getPrice();
+    int getCaffeLattePrice() const{
+        return this->caffelatte.getCaffeLattePrice();
     }   
-    int Product::getCaffeMochaPrice() const{
-        return this->cafemocha.getPrice();
+    int getCaffeMochaPrice() const{
+		return this->caffemocha.getCaffeMochaPrice();
     }
-    int Product::getBlackTeaPrice() const{
-        return this->blacktea.getPrice();
+    int getBlackTeaPrice() const{
+		return this->blacktea.getBlackTeaPrice();
     }
-    int Product::getGreenTeaPrice() const{
-        return this->greentea.getPrice();
+    int getGreenTeaPrice() const{
+		return this->greentea.getGreenTeaPrice();
     }
-    int Product::getStrawberryAdePrice() const{
-        return this->strawberryade.getPrice();
+    int getStrawberryAdePrice() const{
+		return this->strawberryade.getStrawberrtAdePrice();
     }
-    int Product::getLemonadePrice() const{
-        return this->lemonade.getPrice();
+    int getLemonadePrice() const{
+		return this->lemonade.getLemonAdePrice();
     }
-    int Product::getStrawberrysmoothiePrice() const{
-        return this->strawberrysmoothie.getPrice();
+    int getStrawberrysmoothiePrice() const{
+		return this->strawberrysmoothie.getStrawberrySmoothiePrice();
     }
-    int Product::getChocosmoothiePrice() const{
-        return this->chocosmoothie.getPrice();
+    int getChocosmoothiePrice() const{
+		return this->chocosmoothie.getChocoSmoothiePrice();
     }
     
 //     void setAmericanoPrice(int price) {
