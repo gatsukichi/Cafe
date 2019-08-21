@@ -1,9 +1,8 @@
 #pragma once
-#pragma once
 #include "IngredientList.h"
 #include "MoneyBox.h"
 
-class BuyProduct {
+class BuyIngredient {
 public:
 	int ProductCntDecreament(IngredientList& IL, int count, int index) {
 		int buyM;
