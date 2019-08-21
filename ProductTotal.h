@@ -23,7 +23,7 @@ private:
     
     
 public:
-    void setDrinkTotList(int cnt, const int index){ // 팔려서 누적할 cnt, 접근할 방 번호 상수인 index
+    void setDrinkTotList(int cnt, int index){ // 팔려서 누적할 cnt, 접근할 방 번호 상수인 index
         this->DrinkTotList[index] += cnt;
     }
     int * getDrinkTot(){
