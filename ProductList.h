@@ -4,11 +4,11 @@ using namespace std;
 
 #include"Product.h"
 
-class Product{
+class ProductList{
 private:
     Americano americano;
-    CaffeLatte cafelatte;
-    CaffeMocha cafemocha;
+    CaffeLatte caffelatte;
+    CaffeMocha caffemocha;
     BlackTea blacktea;
     GreenTea greentea;
     StrawberryAde strawberryade;
@@ -16,26 +16,6 @@ private:
     StrawberrySmoothie strawberrysmoothie;
     ChocoSmoothie chocosmoothie;
 public:
-    int getAmericanoCnt() const;
-    int getCaffeLatteCnt() const;
-    int getCaffeMochaCnt() const;
-    int getBlackTeaCnt() const;
-    int getGreenTeaCnt() const;
-    int getStrawberryAdeCnt() const;
-    int getLemonadeCnt() const;
-    int getStrawberrysmoothieCnt() const;
-    int getChocosmoothieCnt() const;
-    
-    void setAmericanoCnt(int cnt);
-    void setCaffeLatteCnt(int cnt);
-    void setCafeMochaCnt(int cnt);
-    void setBlackTeaCnt(int cnt);
-    void setGreenTeaCnt(int cnt);
-    void setStrawberryAdeCnt(int cnt);
-    void setLemonAdeCnt(int cnt);
-    void setStrawberrySmoothieCnt(int cnt);
-    void setChocoSmoothieCnt(int cnt);
-    
     int getAmericanoPrice() const;
     int getCaffeLattePrice() const;
     int getCaffeMochaPrice() const;
