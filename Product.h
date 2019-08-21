@@ -1,3 +1,5 @@
+#pragma once
+
 class Americano { // 커피
 private:
 	int price = 5000;
