@@ -25,15 +25,15 @@ public:
     void setSellM(int sellM){
         this->sellM = sellM;
     }
-    void setTax(int tax){
-        this->tax = tax;
-    }
+//     void setTax(int tax){
+//         this->tax = tax;
+//     }
     void setBuyM(int buyM){
         this->buyM = buyM;
     }
-    void setProfit(int profit){
-        this->profit = profit;
-    }
+//     void setProfit(int profit){
+//         this->profit = profit;
+//     }
     //function
     void stateview() const{
         cout << "Sales : " << this->sellM << endl;
