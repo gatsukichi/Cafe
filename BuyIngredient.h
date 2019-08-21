@@ -14,7 +14,7 @@
 #define IN_SUGAR
 
 
-class BuyProduct {
+class BuyIngredient {
 public:
 	int ProductCntDecreament(IngredientList& IL, int count, int index) {
 		int buyM;
