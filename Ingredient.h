@@ -1,10 +1,13 @@
 #pragma once
-
 class CoffeeBean{
 private:
     double gram;
     int price;
 public:
+	CoffeeBean(){
+		gram = 0;
+		price = 0;
+	}
     double getCoffeeBeanGram() const{
         return this->gram;
     }
@@ -22,6 +25,10 @@ private:
     double gram;
     int price;
 public:
+	Milk(){
+		gram = 0;
+		price = 0;
+	}
     double getMilkGram() const{
         return this->gram;
     }
@@ -39,6 +46,10 @@ private:
     double gram;
     int price;
 public:
+	Choco(){
+		gram = 0;
+		price = 0;
+	}
     double getChocoGram() const{
         return this->gram;
     }
@@ -55,6 +66,10 @@ private:
     double gram;
     int price;
 public:
+	BlackTeaBag() {
+		gram = 0;
+		price = 0;
+	}
     double getBlackTeaBagGram() const{
         return this->gram;
     }
@@ -72,6 +87,10 @@ private:
     double gram;
     int price;
 public:
+	GreenTeaBag() {
+		gram = 0;
+		price = 0;
+	}
     double getGreenTeaBagGram() const{
         return this->gram;
     }
@@ -88,6 +107,10 @@ private:
     double gram;
     int price;
 public:
+	Cider() {
+		gram = 0;
+		price = 0;
+	}
     double getCiderGram() const{
         return this->gram;
     }
@@ -104,10 +127,14 @@ private:
     double gram;
     int price;
 public:
+	Strawberry() {
+		gram = 0;
+		price = 0;
+	}
     double getStrawberryGram() const{
         return this->gram;
     }
-    int getStrawberryPirce() const{
+    int getStrawberryPrice() const{
         return this->price;
     }
     void setStrawberryGram(double gram){
@@ -120,6 +147,10 @@ private:
     double gram;
     int price;
 public:
+	Lemon() {
+		gram = 0;
+		price = 0;
+	}
     double getLemonGram() const{
         return this->gram;
     }
@@ -137,6 +168,10 @@ private:
     int count;
     int price;
 public:
+	Egg() {
+		count = 0;
+		price = 0;
+	}
 	int getEggCount() const{
 		return this->count;
 	}
@@ -153,6 +188,10 @@ private:
     double gram;
     int price;
 public:
+	Flour() {
+		gram = 0;
+		price = 0;
+	}
 	int getFlourGram() const{
 		return this->gram;
 	}
@@ -168,6 +207,10 @@ private:
     double gram;
     int price;
 public:
+	Sugar() {
+		gram = 0;
+		price = 0;
+	}
 	int getSugarGram() const{
 		return this->gram;
 	}
