@@ -49,6 +49,6 @@ public:
 	}
 	void accumulateSellM(int SellM)
 	{
-		this->sellM = this->sellM + SellM;
+		this->sellM += SellM;
 	}
 };
