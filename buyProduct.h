@@ -5,7 +5,7 @@
 
 class BuyProduct {
 public:
-	int BuyCountUp(IngredientList& IL, int count, int index) {
+	int ProductCntDecreament(IngredientList& IL, int count, int index) {
 		int buyM;
 		switch (index) {
 		case 1:buyM = IL.getCoffeeBeanPrice() * count; break;
@@ -23,7 +23,7 @@ public:
 		}
 		return buyM;
 	}
-	void IngredientCntIncreament(IngredientList& IL, int count, int index) { //Àç·á¸®½ºÆ® (Àç·á°¡ ºüÁ®¾ßÇÏ´Ï±î), Ä«¿îÆ®´Â ¸îÀÜ»ò´ÂÁö¿¡ µû¶ó¼­ ºüÁ®¾ßÇÏ´Ï±î, ÀÎµ¦½º´Â ¹» »ò´ÂÁö ¾Ë¾Æ¾ßÇÏ´Ï±î
+	void IngredientCntIncreament(IngredientList& IL, int count, int index) { //ì¬ë£Œë¦¬ìŠ¤íŠ¸ (ì¬ë£Œê°€ ë¹ ì ¸ì•¼í•˜ë‹ˆê¹Œ), ì¹´ìš´íŠ¸ëŠ” ëª‡ì”ìƒ€ëŠ”ì§€ì— ë”°ë¼ì„œ ë¹ ì ¸ì•¼í•˜ë‹ˆê¹Œ, ì¸ë±ìŠ¤ëŠ” ë­˜ ìƒ€ëŠ”ì§€ ì•Œì•„ì•¼í•˜ë‹ˆê¹Œ
 		switch (index) {
 		case 1:
 		case 2:
