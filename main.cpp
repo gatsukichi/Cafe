@@ -39,8 +39,8 @@ void screen(ProductList& PL, ProductTotal& PT, IngredientList& IL, MoneyBox& MB)
 		menuNum = menu(menuList, menuCnt);
 		if (menuNum == menuCnt) { break; }
 		switch (menuNum) {
-		case 1:saleMenu() ; break;
-		case 2:stockMenu(); break;
+		case 1:sellMenu() ; break;
+		case 2:buyMenu(); break;
 		case 3:profitMenu() ; break;
 		case 4:deadLine() ; break;
 		default: break;
@@ -98,6 +98,7 @@ void buyMenu() {
 	char *menuList[] = {"음료 재료 구매","음식 재료 구매"};
 	int menuCnt = sizeof(menuList) / sizeof(menuList[0]);
 	int menuNum;
+	
 	displayTitle("재고 관리");
 	while (true) {
 		menuNum = menu(menuList, menuCnt);
