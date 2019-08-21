@@ -8,22 +8,22 @@ public:
 	int sellCountUp(ProductList &PL, int count, int index) {
 		int sellM;
 		switch (index) {
-		case 1:PL.getAmericanoPrice();
-		case 2:PL.getCaffeLattePrice();
-		case 3:PL.getCaffeMochaPrice();
-		case 4:PL.getGreenTeaPrice();
-		case 5:PL.getBlackTeaPrice();
-		case 6:PL.getStrawberryAdePrice();
-		case 7:PL.getLemonadePrice();
-		case 8:PL.getStrawberrysmoothiePrice();
-		case 9:PL.getChocosmoothiePrice();
+		case 1:sellM = PL.getAmericanoPrice() * count; break;
+		case 2:sellM = PL.getCaffeLattePrice() * count; break;
+		case 3:sellM = PL.getCaffeMochaPrice() * count; break;
+		case 4:sellM = PL.getGreenTeaPrice() * count; break;
+		case 5:sellM = PL.getBlackTeaPrice() * count; break;
+		case 6:sellM = PL.getStrawberryAdePrice() * count; break;
+		case 7:sellM = PL.getLemonadePrice() * count; break;
+		case 8:sellM = PL.getStrawberrysmoothiePrice() * count; break;
+		case 9:sellM = PL.getChocosmoothiePrice() * count; break;
 		default: break;
 		}
 
 		return sellM;
 	}
 
-	void sellCountUp(IngredientList &IL, int count, int index) { //Àç·á¸®½ºÆ® (Àç·á°¡ ºüÁ®¾ßÇÏ´Ï±î), Ä«¿îÆ®´Â ¸îÀÜ»ò´ÂÁö¿¡ µû¶ó¼­ ºüÁ®¾ßÇÏ´Ï±î, ÀÎµ¦½º´Â ¹» »ò´ÂÁö ¾Ë¾Æ¾ßÇÏ´Ï±î
+	void sellCountUp(IngredientList &IL, int count, int index) { //ì¬ë£Œë¦¬ìŠ¤íŠ¸ (ì¬ë£Œê°€ ë¹ ì ¸ì•¼í•˜ë‹ˆê¹Œ), ì¹´ìš´íŠ¸ëŠ” ëª‡ì”ìƒ€ëŠ”ì§€ì— ë”°ë¼ì„œ ë¹ ì ¸ì•¼í•˜ë‹ˆê¹Œ, ì¸ë±ìŠ¤ëŠ” ë­˜ ìƒ€ëŠ”ì§€ ì•Œì•„ì•¼í•˜ë‹ˆê¹Œ
 		switch (index) {
 		case 1:
 
@@ -36,7 +36,7 @@ public:
 	}
 
 	void setMoney(&MoneyBox MB, int sellM) {
-		MoneyBox.setSellM(µ·);
+		MoneyBox.setSellM(ëˆ);
 	}
 
 
