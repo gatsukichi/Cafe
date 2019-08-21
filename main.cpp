@@ -3,7 +3,7 @@ using namespace std;
 #include "Ingredient.h"
 #include "Product.h"
 
-int menu(char **menuList, int menuCnt); // 전달된 메뉴를 출력하고 정확한 메뉴번호를 리턴하는 
+int menu(const char **menuList, int menuCnt); // 전달된 메뉴를 출력하고 정확한 메뉴번호를 리턴하는 
 void saleMenu(); // 상품판매 메뉴
 void stockMenu(); // 재고관리 메뉴 
 void profitMenu(); // 매상관리 메뉴 
@@ -44,7 +44,7 @@ void screen(Product &rHa) {
 	return;
 }
 
-int menu(char **menuList, int menuCnt) {
+int menu(const char **menuList, int menuCnt) {
 	int i;
 	int menuNum = 0; /* 입력된 메뉴 번호 저장 변수*/
 
