@@ -30,7 +30,7 @@ int main() {
 	return 0;
 }
 
-void screen(Product &rHa) {
+void screen(ProductList& PL, ProductTotal& PT, IngredientList& IL, MoneyBox& MB) {
 	char *menuList[] = { "판매 관리","재고 관리","매상 관리","마감 하기" };
 	int menuCnt = sizeof(menuList) / sizeof(menuList[0]);
 	int menuNum;
@@ -71,10 +71,11 @@ void saleMenu() {
 	int menuCnt = sizeof(menuList) / sizeof(menuList[0]);
 	int menuNum;
 	int cnt;
+	
 	displayTitle("상품 판매");
 	while (true) {
 		menuNum = menu(menuList, menuCnt);
-		cnt = inputInteger("몇 잔 판매 하시겠습니까 ? : ");
+		cnt = inputInteger("몇 잔 판매 하시겠습니까? : ");
 		if (menuNum == menuCnt) { break; }
 		switch (menuNum) {
 		case 1:
