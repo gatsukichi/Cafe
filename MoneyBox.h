@@ -36,16 +36,15 @@ public:
 	//     }
 		//function
 	void stateview() const {
-		cout << "Sales : " << this->sellM << endl;
-		cout << "Tax : " << this->tax << endl;
-		cout << "Purchase : " << this->buyM << endl;
-		cout << "Profit : " << this->profit << endl;
+		cout << "Sell Money : " << this->sellM << endl;
+		cout << "Buy Money  : " << this->buyM << endl;
+		cout << "Tax        : " << this->tax << endl;
+		cout << "Profit     : " << this->profit << endl;
 	}
-	void accumulateSellM(int SellM)
-	{
+	void accumulateSellM(int SellM) {
 		this->sellM += SellM;
 	}
-	void accumulateBuyM(int BuyM){
+	void accumulateBuyM(int BuyM) {
 		this->buyM += BuyM;
 	}
 };
