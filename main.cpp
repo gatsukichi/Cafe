@@ -64,9 +64,11 @@ void saleMenu() {
 	char *menuList[] = { "아메리카노","카페라떼","카페모카","홍차","녹차","딸기에이드","레몬에이드","딸기스무디","초코스무디" };
 	int menuCnt = sizeof(menuList) / sizeof(menuList[0]);
 	int menuNum;
+	int cnt;
 	displayTitle("상품 판매");
 	while (true) {
 		menuNum = menu(menuList, menuCnt);
+		cnt = inputInteger("몇 잔 판매 하시겠습니까 ? : ");
 		if (menuNum == menuCnt) { break; }
 		switch (menuNum) {
 		case 1:
