@@ -1,3 +1,6 @@
+#ifndef INGREDIENTLIST_H_
+#define INGREDIENTLIST_H_
+
 #include <iostream>
 using namespace std;
 #include"Ingredient.h"
@@ -188,3 +191,5 @@ public:
         sugar.increaseSugarGram(gram);
     }
 };
+
+#endif /* INGREDIENTLIST_H_ */
