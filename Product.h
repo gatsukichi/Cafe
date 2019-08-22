@@ -3,10 +3,13 @@
 
 class Americano { // 커피
 private:
-	int price = 5000;
+	int price;
 	//    bool ice;
 	//    bool whipping;
 public:
+    Americano() {
+        this->price = 10;
+    }
 	int getAmericanoPrice() const
 	{
 		return this->price;
@@ -18,6 +21,9 @@ private:
 	//    bool ice;
 	//    bool whipping;
 public:
+    CaffeLatte() {
+        this->price = 10;
+    }
 	int getCaffeLattePrice() const
 	{
 		return this->price;
@@ -29,6 +35,9 @@ private:
 	//    bool ice;
 	//    bool whipping;
 public:
+    CaffeMocha() {
+        this->price = 10;
+    }
 	int getCaffeMochaPrice() const
 	{
 		return this->price;
@@ -40,6 +49,9 @@ private:
 	//    bool ice;
 	//    bool whipping;
 public:
+    GreenTea() {
+        this->price = 10;
+    }
 	int getGreenTeaPrice() const
 	{
 		return this->price;
@@ -51,6 +63,9 @@ private:
 	//    bool ice;
 	//    bool whipping;
 public:
+    BlackTea() {
+        this->price = 10;
+    }
 	int getBlackTeaPrice() const
 	{
 		return this->price;
@@ -62,6 +77,9 @@ private:
 	//    bool ice;
 	//    bool whipping;
 public:
+    StrawberryAde() {
+        this->price = 10;
+    }
 	int getStrawberrtAdePrice() const
 	{
 		return this->price;
@@ -73,6 +91,9 @@ private:
 	//    bool ice;
 	//    bool whipping;
 public:
+    LemonAde() {
+        this->price = 10;
+    }
 	int getLemonAdePrice() const
 	{
 		return this->price;
@@ -84,6 +105,9 @@ private:
 	//    bool ice;
 	//    bool whipping;
 public:
+    StrawberrySmoothie() {
+        this->price = 10;
+    }
 	int getStrawberrySmoothiePrice() const
 	{
 		return this->price;
@@ -95,6 +119,9 @@ private:
 	//    bool ice;
 	//    bool whipping;
 public:
+    ChocoSmoothie() {
+        this->price = 10;
+    }
 	int getChocoSmoothiePrice() const
 	{
 		return this->price;
