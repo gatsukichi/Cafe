@@ -23,9 +23,7 @@ int main() {
     IngredientList IL;
     int month_cnt;
     
-    cout << "운영할 개월수를 입력하시오 : ";
-    cin >> month_cnt;
-    
+    month_cnt = inputInteger("운영할 개월수를 입력하시오: ");
     screen(PL, IL, month_cnt);
     
     getchar(); getchar();
@@ -90,7 +88,6 @@ int menu(const char** menuList, int menuCnt) {
     cout << "==================================" << endl;
     while (menuNum<1 || menuNum>menuCnt) { /* 범위 내의 번호가 입력될 때 까지 반복*/
         menuNum = inputInteger("# 메뉴번호를 입력하세요 : ");
-        
     }
     return menuNum;
 }
@@ -103,13 +100,11 @@ void sellMenu(ProductList& PL, IngredientList& IL, ProductTotal* PTP, MoneyBox* 
     int sellCnt;
     int sellMoney;
     
-    
     displayTitle("판매");
     while (true) {
         menuNum = menu(menuList, menuCnt);
         if (menuNum == menuCnt) { break; }
         sellCnt = inputInteger("몇 잔 판매 하시겠습니까? : ");
-        
         SP.IngredientCntDecreament(IL, menuNum, sellCnt);
         sellMoney = SP.ProductCntIncreament(PL, menuNum, sellCnt);
         SP.MoneyIncreament(MBP[i], sellMoney);
