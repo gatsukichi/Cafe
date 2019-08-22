@@ -1,3 +1,6 @@
+#ifndef PRODUCTTOTAL_H_
+#define PRODUCTTOTAL_H_
+
 #include <iostream>
 using namespace std;
 #include "Product.h"
@@ -18,21 +21,21 @@ private:
     //int totChocoSmoothie;
     
 public:
-    void setDrinkTotList(int cnt, int index) { // 팔려서 누적할 cnt, 접근할 방 번호 상수인 index
+    void addSellCount(int index, int cnt) { // 팔려서 누적할 cnt, 접근할 방 번호 상수인 index
         this->DrinkTotList[index] += cnt;
     }
-    int * getDrinkTot() {
+    int* getSellCount() {
         return this->DrinkTotList;
     }
-    int getDrinkTot(int index) {
+    int getSellCount(int index) {
         return this->DrinkTotList[index];
     }
     void totalView() {
-        cout << "- Drink Total -" << endl;
+        cout << "- Total Sell -" << endl;
         for (int i=0; i<DRINK_MAX_CNT; i++) {
             cout << i+1 << ". " << this->DrinkTotList[i] << endl;
         }
     }
 };
 
-
+#endif /* PRODUCTTOTAL_H_ */
