@@ -53,6 +53,7 @@ void screen(ProductList& PL, IngredientList& IL, int month_cnt) {
     MBP[0].setProfit();
     MBP[0].setGoalSellM();
     MBP[0].setBePoint();
+    MBP[1].setSellM(sm*0.7);
     
     displayTitle("카페 운영 프로그램");
     while (true) {
@@ -99,14 +100,15 @@ void sellMenu(ProductList& PL, IngredientList& IL, ProductTotal* PTP, MoneyBox* 
     int sellCnt;
     int sellMoney;
     
+    
     displayTitle("판매");
     while (true) {
         menuNum = menu(menuList, menuCnt);
         if (menuNum == menuCnt) { break; }
         sellCnt = inputInteger("몇 잔 판매 하시겠습니까? : ");
         
-        sellMoney = SP.ProductCntIncreament(PL, menuNum, sellCnt);
         SP.IngredientCntDecreament(IL, menuNum, sellCnt);
+        sellMoney = SP.ProductCntIncreament(PL, menuNum, sellCnt);
         SP.MoneyIncreament(MBP[i], sellMoney);
         PTP[i].addSellCount(menuNum-1, sellCnt);
     }
@@ -122,7 +124,7 @@ void buyMenu(IngredientList& IL, MoneyBox* MBP, int& i) {
     int buyCnt;
     int buyMoney;
     
-    displayTitle("재고");
+    displayTitle("구매");
     while (true) {
         menuNum = menu(menuList, menuCnt);
         if (menuNum == menuCnt) { break; }
@@ -131,7 +133,7 @@ void buyMenu(IngredientList& IL, MoneyBox* MBP, int& i) {
         BI.IngredientCntIncreament(IL, menuNum, buyCnt);
         BI.MoneyIncreament(MBP[i], buyMoney);
     }
-    displayTitle("재고 종료");
+    displayTitle("구매 종료");
     return;
 }
 
