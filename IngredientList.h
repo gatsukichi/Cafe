@@ -5,9 +5,7 @@
 using namespace std;
 #include"Ingredient.h"
 class IngredientList {
-
 private:
-
 	CoffeeBean coffeebean;
 	Milk milk;
 	Choco choco;
@@ -19,9 +17,8 @@ private:
 	Egg egg;
 	Flour flour;
 	Sugar sugar;
-    
 public:
-	IngredientList() {}
+    IngredientList() {};
 	double getCoffeeBeanGram() const {
 		return coffeebean.getCoffeeBeanGram();
 	}
@@ -189,6 +186,19 @@ public:
     }
     void increaseSugarGram(double gram) {
         sugar.increaseSugarGram(gram);
+    }
+    void stateview() {
+        cout << "커피빈 : " <<this->getCoffeeBeanGram() << 'g' << endl;
+        cout << "우유 : " << this->getMilkGram() << 'g' << endl;
+        cout << "초코 : " << this->getChocoGram() << 'g' << endl;
+        cout << "홍차티백 : " << this->getBlackTeaBagGram() << 'g' << endl;
+        cout << "그린티백 : " << this->getGreenTeaBagGram() << 'g' << endl;
+        cout << "사이다 : " << this->getCiderGram() << 'g' << endl;
+        cout << "딸기 : " << this->getStrawberryGram() << 'g' << endl;
+        cout << "레몬 : " << this->getLemonGram() << 'g' << endl;
+        cout << "달걀 : " << this->getEggCount() << "개" << endl;
+        cout << "밀가루 : " << this->getFlourGram() << 'g' << endl;
+        cout << "설탕 : " << this->getSugarGram() << 'g' << endl;
     }
 };
 
