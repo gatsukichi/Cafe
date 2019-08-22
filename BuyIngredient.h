@@ -1,5 +1,5 @@
 #ifndef BUYINGREDIENT_H_
-#define BUTINGREDIENT_H_
+#define BUYINGREDIENT_H_
 
 #include "IngredientList.h"
 #include "MoneyBox.h"
