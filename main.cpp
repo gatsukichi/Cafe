@@ -108,7 +108,7 @@ void sellMenu(ProductList& PL, IngredientList& IL, ProductTotal* PTP, MoneyBox* 
         sellMoney = SP.ProductCntIncreament(PL, menuNum, sellCnt);
         SP.IngredientCntDecreament(IL, menuNum, sellCnt);
         SP.MoneyIncreament(MBP[i], sellMoney);
-        PTP[i].addSellCount(menuNum, sellCnt);
+        PTP[i].addSellCount(menuNum-1, sellCnt);
     }
     displayTitle("판매 종료");
     return;
@@ -127,8 +127,8 @@ void buyMenu(IngredientList& IL, MoneyBox* MBP, int& i) {
         menuNum = menu(menuList, menuCnt);
         if (menuNum == menuCnt) { break; }
         buyCnt = inputInteger("몇 개 구매하시겠습니까? : ");
-        buyMoney = BI.ProductCntDecreament(IL, buyCnt, menuNum);
-        BI.IngredientCntIncreament(IL, buyCnt, menuNum);
+        buyMoney = BI.ProductCntDecreament(IL, menuNum, buyCnt);
+        BI.IngredientCntIncreament(IL, menuNum, buyCnt);
         BI.MoneyIncreament(MBP[i], buyMoney);
     }
     displayTitle("재고 종료");
