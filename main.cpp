@@ -10,7 +10,7 @@ using namespace std;
 int menu(const char** menuList, int menuCnt);
 void sellMenu(ProductList& PL, IngredientList& IL, ProductTotal* PTP, MoneyBox* MBP, int& i);
 void buyMenu(IngredientList& IL, MoneyBox* MBP,int& i);
-void viewMenu(MoneyBox* MBP, ProductTotal* PTP, int& i);
+void viewMenu(MoneyBox* MBP, ProductTotal* PTP, IngredientList& IL, int& i);
 void displayTitle(string title);
 void screen(ProductList& PL, IngredientList& IL, int month_cnt);
 int inputInteger(char* message);
@@ -36,7 +36,7 @@ int main() {
 void screen(ProductList& PL, IngredientList& IL, int month_cnt) {
     const char* menuList[] = { "판매 관리","재고 관리","매상 관리","마감 하기" };
     int i=1;
-    int menuCnt = sizeof(menuList) / sizeof(menuList[0]);
+    int menuCnt = sizeof(menuList)/sizeof(menuList[0]);
     int menuNum;
     bool gogo;
     
@@ -61,7 +61,7 @@ void screen(ProductList& PL, IngredientList& IL, int month_cnt) {
         switch (menuNum) {
             case 1:sellMenu(PL, IL, PTP, MBP, i); break;
             case 2:buyMenu(IL, MBP,i); break;
-            case 3:viewMenu(MBP, PTP,i); break;
+            case 3:viewMenu(MBP, PTP, IL, i); break;
             case 4:
                 gogo = deadLine(MBP, i);
                 if (gogo == false) {
@@ -121,7 +121,7 @@ void sellMenu(ProductList& PL, IngredientList& IL, ProductTotal* PTP, MoneyBox* 
 
 void buyMenu(IngredientList& IL, MoneyBox* MBP, int& i) {
     BuyIngredient BI;
-    const char *menuList[] = {"음료 재료 구매","음식 재료 구매", "종료"};
+    const char *menuList[] = {"커피빈","우유", "초코", "홍차", "녹차", "사이다", "딸기", "레몬", "달걀", "밀가루", "설탕", "종료"};
     int menuCnt = sizeof(menuList) / sizeof(menuList[0]);
     int menuNum;
     int buyCnt;
@@ -140,8 +140,8 @@ void buyMenu(IngredientList& IL, MoneyBox* MBP, int& i) {
     return;
 }
 
-void viewMenu(MoneyBox* MBP, ProductTotal* PTP, int& i) {
-    const char *menuList[] = { "판매 내역", "통장 내역" , "목표 매출 출력", "종료" };
+void viewMenu(MoneyBox* MBP, ProductTotal* PTP, IngredientList& IL, int& i) {
+    const char* menuList[] = { "판매 현황","재고 현황", "통장 내역" , "목표 매출 출력", "종료" };
     int menuCnt = sizeof(menuList) / sizeof(menuList[0]);
     int menuNum;
     displayTitle("매상 관리");
@@ -149,9 +149,10 @@ void viewMenu(MoneyBox* MBP, ProductTotal* PTP, int& i) {
         menuNum = menu(menuList, menuCnt);
         if (menuNum == menuCnt) { break; }
         switch (menuNum) {
-            case 1: PTP[i+1].totalView(); break;
-            case 2: MBP[i+1].stateView(); break;
-            case 3: MBP[i].goalView(MBP[i]); break;
+            case 1: PTP[i].totalView(); break;
+            case 2: IL.stateview(); break;
+            case 3: MBP[i].stateView(); break;
+            case 4: MBP[i-1].goalView(); break;
             default:break;
         }
     }
@@ -165,18 +166,19 @@ bool deadLine(MoneyBox* MBP, int& i) {
         MBP[j].stateView();
         cout << "=====================================" << endl;
     }
-    i++;
-    
-    if ( MBP[i].getBePoint() >= MBP[i+1].getProfit() ) {//지난달 손익분기점을 지금현재의순이익이 못넘었을때 return false;
+    if ( MBP[i-1].getBePoint() >= MBP[i].getProfit() ) {//지난달 손익분기점을 지금현재의순이익이 못넘었을때 return false;
+        //        cout <<MBP[i-1].getBePoint() << endl;
+        //        cout <<MBP[i].getProfit() << endl;
         cout << "망해서 강제종료";
         return false;
     }    //망했어요
-    if ( MBP[i].getGoalSellM() <= MBP[i+1].getSellM() ) {//흑자 , 적자에 따른 것 검사 문구로 표현해준다.
+    if ( MBP[i-1].getGoalSellM() <= MBP[i].getSellM() ) {//흑자 , 적자에 따른 것 검사 문구로 표현해준다.
         cout << "흑자 ! 이번달 열심히 했네요!";
     }
     else{
         cout << " 적자! 다음달은 더 힘내세요 !";
     }
+    i++;
     return true;
 }
 
