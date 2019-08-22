@@ -13,6 +13,23 @@ private:
     int goalSellM;  // 목표매출 - 실적출력할때 검사해서 달성시 우수 미달성시 미흡 이렇게 갈려서 나오게 하는것
     int bePoint;    // 손익분기점 - 달성시 다음달 영업가능 미달성시 개월수가 남았어도 강제종료.
 public:
+    MoneyBox() {
+        sellM = 0;
+        buyM = 0;
+        tax = 0;
+        profit = 0;
+        goalSellM = 0;
+        bePoint = 0;
+    }
+    
+    MoneyBox(int sellM, int buyM, int tax, int profit, int goalSellM, int bePoint) {
+        this->sellM = sellM;
+        this->buyM = buyM;
+        this->tax = tax;
+        this->profit = profit;
+        this->goalSellM = goalSellM;
+        this->bePoint = bePoint;
+    }
     
     //getter
     int getSellM() const {
@@ -61,8 +78,6 @@ public:
     void setBePoint() {
         this->bePoint = this->tax + (this->buyM*1.1);
     }
-    
-    
     
     //function
     void stateView() const {
