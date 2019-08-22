@@ -26,7 +26,6 @@ int main() {
     cout << "운영할 개월수를 입력하시오 : ";
     cin >> month_cnt;
     
-    
     screen(PL, IL, month_cnt);
     
     getchar(); getchar();
@@ -34,7 +33,7 @@ int main() {
 }
 
 void screen(ProductList& PL, IngredientList& IL, int month_cnt) {
-    const char* menuList[] = { "판매 관리","재고 관리","매상 관리","마감 하기" };
+    const char* menuList[] = { "판매","재고","장부","마감하기" };
     int i=1;
     int menuCnt = sizeof(menuList)/sizeof(menuList[0]);
     int menuNum;
@@ -100,22 +99,18 @@ void sellMenu(ProductList& PL, IngredientList& IL, ProductTotal* PTP, MoneyBox* 
     int sellCnt;
     int sellMoney;
     
-    displayTitle("상품 판매");
+    displayTitle("판매");
     while (true) {
         menuNum = menu(menuList, menuCnt);
         if (menuNum == menuCnt) { break; }
         sellCnt = inputInteger("몇 잔 판매 하시겠습니까? : ");
         
         sellMoney = SP.ProductCntIncreament(PL, menuNum, sellCnt);
-        cout << "에이: " << sellMoney << endl;
         SP.IngredientCntDecreament(IL, menuNum, sellCnt);
-        cout << "비이: " << MBP[i].getSellM() << endl;
         SP.MoneyIncreament(MBP[i], sellMoney);
-        cout << "씨이: " << MBP[i].getSellM() << endl;
         PTP[i].addSellCount(menuNum, sellCnt);
-        
     }
-    displayTitle("상품 판매 종료");
+    displayTitle("판매 종료");
     return;
 }
 
@@ -127,7 +122,7 @@ void buyMenu(IngredientList& IL, MoneyBox* MBP, int& i) {
     int buyCnt;
     int buyMoney;
     
-    displayTitle("재고 관리");
+    displayTitle("재고");
     while (true) {
         menuNum = menu(menuList, menuCnt);
         if (menuNum == menuCnt) { break; }
@@ -136,15 +131,15 @@ void buyMenu(IngredientList& IL, MoneyBox* MBP, int& i) {
         BI.IngredientCntIncreament(IL, buyCnt, menuNum);
         BI.MoneyIncreament(MBP[i], buyMoney);
     }
-    displayTitle("재고 관리 종료");
+    displayTitle("재고 종료");
     return;
 }
 
 void viewMenu(MoneyBox* MBP, ProductTotal* PTP, IngredientList& IL, int& i) {
-    const char* menuList[] = { "판매 현황","재고 현황", "통장 내역" , "목표 매출 출력", "종료" };
+    const char* menuList[] = { "판매 수량","재고 수량","통장 내역","목표 매출 출력","종료" };
     int menuCnt = sizeof(menuList) / sizeof(menuList[0]);
     int menuNum;
-    displayTitle("매상 관리");
+    displayTitle("장부");
     while (true) {
         menuNum = menu(menuList, menuCnt);
         if (menuNum == menuCnt) { break; }
@@ -156,7 +151,7 @@ void viewMenu(MoneyBox* MBP, ProductTotal* PTP, IngredientList& IL, int& i) {
             default:break;
         }
     }
-    displayTitle("매상 관리 종료");
+    displayTitle("장부 종료");
     return;
 }
 
