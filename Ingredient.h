@@ -1,4 +1,6 @@
-#pragma once
+#ifndef INGREDIENT_H_
+#define INGREDIENT_H_
+
 class CoffeeBean{
 private:
     double gram;
@@ -284,3 +286,5 @@ public:
         this->gram += gram;
     }
 };
+
+#endif /* INGREDIENT_H_ */
