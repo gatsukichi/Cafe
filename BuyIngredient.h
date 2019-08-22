@@ -1,4 +1,6 @@
-#pragma once
+#ifndef BUYINGREDIENT_H_
+#define BUTINGREDIENT_H_
+
 #include "IngredientList.h"
 #include "MoneyBox.h"
 #define IN_COFFEEBEAN 100
@@ -54,3 +56,5 @@ public:
 		MB.accumulateBuyM(buyM);
 	}
 };
+
+#endif /* BUYINGREDIENT_H_ */
