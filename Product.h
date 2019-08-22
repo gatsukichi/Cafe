@@ -1,4 +1,5 @@
-#pragma once
+#ifndef PRODUCT_H_
+#define PRODUCT_H_
 
 class Americano { // 커피
 private:
@@ -99,3 +100,5 @@ public:
 		return this->price;
 	}
 };
+
+#endif /* PRODUCT_H_ */
