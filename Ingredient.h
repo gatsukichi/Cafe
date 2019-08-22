@@ -1,16 +1,15 @@
 #ifndef INGREDIENT_H_
 #define INGREDIENT_H_
 
-
 class CoffeeBean{
 private:
     double gram;
     int price;
 public:
-    CoffeeBean(){
-        gram = 800;
-        price = 20;
-    }
+	CoffeeBean(){
+		gram = 800;
+		price = 20;
+	}
     double getCoffeeBeanGram() const{
         return this->gram;
     }
@@ -20,8 +19,12 @@ public:
     void setCoffeeBeanGram(double gram){
         this->gram = gram;
     }
-    void decreaseCoffeeBeanGram(double gram){
-        this->gram -= gram;
+	void decreaseCoffeeBeanGram(double gram){
+        if ((this->gram)-gram < 0) {
+            throw "재료가 부족합니다!";
+        } else {
+            this->gram -= gram;
+        }
     }
     void increaseCoffeeBeanGram(double gram){
         this->gram += gram;
@@ -33,10 +36,10 @@ private:
     double gram;
     int price;
 public:
-    Milk(){
-        gram = 1500;
-        price = 30;
-    }
+	Milk(){
+		gram = 1500;
+		price = 30;
+	}
     double getMilkGram() const{
         return this->gram;
     }
@@ -47,7 +50,11 @@ public:
         this->gram = gram;
     }
     void decreaseMilkGram(double gram){
-        this->gram -= gram;
+        if ((this->gram)-gram < 0) {
+            throw "재료가 부족합니다!";
+        } else {
+            this->gram -= gram;
+        }
     }
     void increaseMilkGram(double gram){
         this->gram += gram;
@@ -60,10 +67,10 @@ private:
     double gram;
     int price;
 public:
-    Choco(){
-        gram = 600;
-        price = 30;
-    }
+	Choco(){
+		gram = 600;
+		price = 30;
+	}
     double getChocoGram() const{
         return this->gram;
     }
@@ -74,7 +81,11 @@ public:
         this->gram = gram;
     }
     void decreaseChocoGram(double gram){
-        this->gram -= gram;
+        if ((this->gram)-gram < 0) {
+            throw "재료가 부족합니다!";
+        } else {
+            this->gram -= gram;
+        }
     }
     void increaseChocoGram(double gram){
         this->gram += gram;
@@ -86,10 +97,10 @@ private:
     double gram;
     int price;
 public:
-    BlackTeaBag() {
-        gram = 300;
-        price = 20;
-    }
+	BlackTeaBag() {
+		gram = 300;
+		price = 20;
+	}
     double getBlackTeaBagGram() const{
         return this->gram;
     }
@@ -100,7 +111,11 @@ public:
         this->gram = gram;
     }
     void decreaseBlackTeaBagGram(double gram){
-        this->gram -= gram;
+        if ((this->gram)-gram < 0) {
+            throw "재료가 부족합니다!";
+        } else {
+            this->gram -= gram;
+        }
     }
     void increaseBlackTeaBagGram(double gram){
         this->gram += gram;
@@ -113,10 +128,10 @@ private:
     double gram;
     int price;
 public:
-    GreenTeaBag() {
-        gram = 300;
-        price = 20;
-    }
+	GreenTeaBag() {
+		gram = 300;
+		price = 20;
+	}
     double getGreenTeaBagGram() const{
         return this->gram;
     }
@@ -127,7 +142,11 @@ public:
         this->gram = gram;
     }
     void decreaseGreenTeaBagGram(double gram){
-        this->gram -= gram;
+        if ((this->gram)-gram < 0) {
+            throw "재료가 부족합니다!";
+        } else {
+            this->gram -= gram;
+        }
     }
     void increaseGreenTeaBagGram(double gram){
         this->gram += gram;
@@ -139,10 +158,10 @@ private:
     double gram;
     int price;
 public:
-    Cider() {
-        gram = 1000;
-        price = 10;
-    }
+	Cider() {
+		gram = 1000;
+		price = 10;
+	}
     double getCiderGram() const{
         return this->gram;
     }
@@ -153,7 +172,11 @@ public:
         this->gram = gram;
     }
     void decreaseCiderGram(double gram){
-        this->gram -= gram;
+        if ((this->gram)-gram < 0) {
+            throw "재료가 부족합니다!";
+        } else {
+            this->gram -= gram;
+        }
     }
     void increaseCiderGram(double gram){
         this->gram += gram;
@@ -165,10 +188,10 @@ private:
     double gram;
     int price;
 public:
-    Strawberry() {
-        gram = 1000;
-        price = 30;
-    }
+	Strawberry() {
+		gram = 1000;
+		price = 30;
+	}
     double getStrawberryGram() const{
         return this->gram;
     }
@@ -179,7 +202,11 @@ public:
         this->gram = gram;
     }
     void decreaseStrawberryGram(double gram){
-        this->gram -= gram;
+        if ((this->gram)-gram < 0) {
+            throw "재료가 부족합니다!";
+        } else {
+            this->gram -= gram;
+        }
     }
     void increaseStrawberryGram(double gram){
         this->gram += gram;
@@ -191,10 +218,10 @@ private:
     double gram;
     int price;
 public:
-    Lemon() {
-        gram = 500;
-        price = 30;
-    }
+	Lemon() {
+		gram = 500;
+		price = 30;
+	}
     double getLemonGram() const{
         return this->gram;
     }
@@ -205,7 +232,11 @@ public:
         this->gram = gram;
     }
     void decreaseLemonGram(double gram){
-        this->gram -= gram;
+        if ((this->gram)-gram < 0) {
+            throw "재료가 부족합니다!";
+        } else {
+            this->gram -= gram;
+        }
     }
     void increaseLemonGram(double gram){
         this->gram += gram;
@@ -217,21 +248,25 @@ private:
     int count;
     int price;
 public:
-    Egg() {
-        count = 30;
-        price = 10;
-    }
-    int getEggCount() const{
-        return this->count;
-    }
+	Egg() {
+		count = 30;
+		price = 10;
+	}
+	int getEggCount() const{
+		return this->count;
+	}
     int getEggPrice() const{
         return this->price;
     }
-    void setEggCount(int count){
-        this->count = count;
-    }
+	void setEggCount(int count){
+		this->count = count;
+	}
     void decreaseEggCount(int count){
-        this->count -= count;
+        if ((this->count)-count < 0) {
+            throw "재료가 부족합니다!";
+        } else {
+            this->count -= count;
+        }
     }
     void increaseEggCount(int count){
         this->count += count;
@@ -242,21 +277,25 @@ private:
     double gram;
     int price;
 public:
-    Flour() {
-        gram = 1000;
-        price = 10;
-    }
-    int getFlourGram() const{
-        return this->gram;
-    }
-    int getFlourPrice() const{
-        return this->price;
-    }
+	Flour() {
+		gram = 1000;
+		price = 10;
+	}
+	int getFlourGram() const{
+		return this->gram;
+	}
+	int getFlourPrice() const{
+		return this->price;
+	}
     void setFlourGram(int gram){
         this->gram = gram;
     }
     void decreaseFlourGram(double gram){
-        this->gram -= gram;
+        if ((this->gram)-gram < 0) {
+            throw "재료가 부족합니다!";
+        } else {
+            this->gram -= gram;
+        }
     }
     void increaseFlourGram(double gram){
         this->gram += gram;
@@ -267,21 +306,25 @@ private:
     double gram;
     int price;
 public:
-    Sugar() {
-        gram = 700;
-        price = 10;
-    }
-    int getSugarGram() const{
-        return this->gram;
-    }
-    int getSugarPrice() const{
-        return this->price;
-    }
+	Sugar() {
+		gram = 700;
+		price = 10;
+	}
+	int getSugarGram() const{
+		return this->gram;
+	}
+	int getSugarPrice() const{
+		return this->price;
+	}
     void setSugarGram(int gram){
         this->gram = gram;
     }
     void decreaseSugarGram(double gram){
-        this->gram -= gram;
+        if ((this->gram)-gram < 0) {
+            throw "재료가 부족합니다!";
+        } else {
+            this->gram -= gram;
+        }
     }
     void increaseSugarGram(double gram){
         this->gram += gram;
