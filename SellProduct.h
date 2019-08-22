@@ -1,4 +1,6 @@
-#pragma once
+#ifndef SELLPRODUCT_H_
+#define SELLPRODUCT_H_
+
 #include "IngredientList.h"
 #include "MoneyBox.h"
 #include "ProductList.h"
@@ -80,3 +82,5 @@ public:
 	}
 	
 };
+
+#endif /* SELLPRODUCT_H_ */
