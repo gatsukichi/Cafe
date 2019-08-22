@@ -43,12 +43,11 @@ void screen(ProductList& PL, IngredientList& IL, int month_cnt) {
     MBP = new MoneyBox[month_cnt+1];
     ProductTotal* PTP;
     PTP = new ProductTotal[month_cnt+1];
-    int sm, bm; // 전주인의 총매출 ,재료구입가격
+    int sm; // 전주인의 총매출 ,재료구입가격
     
     sm = inputInteger("지난달 총매출을 입력하시오 : ");
-    bm =inputInteger("지난달 재고구입비용을 입력하시오 : ");
     MBP[0].setSellM(sm);
-    MBP[0].setBuyM(bm);
+    MBP[0].setBuyM(sm*0.5);
     MBP[0].setTax();
     MBP[0].setProfit();
     MBP[0].setGoalSellM();
@@ -73,6 +72,10 @@ void screen(ProductList& PL, IngredientList& IL, int month_cnt) {
         if (i-1 == month_cnt) { break; }
     }
     displayTitle("카페 운영 프로그램 종료");
+    
+    delete[] MBP;
+    delete[] PTP;
+    
     return;
 }
 
@@ -128,7 +131,22 @@ void buyMenu(IngredientList& IL, MoneyBox* MBP, int& i) {
     while (true) {
         menuNum = menu(menuList, menuCnt);
         if (menuNum == menuCnt) { break; }
-        buyCnt = inputInteger("몇 개 구매하시겠습니까? : ");
+        cout << "(단위: ";
+        switch (menuNum) {
+            case 1: cout << 100 << "g) "; break;
+            case 2: cout << 200 << "g) "; break;
+            case 3: cout << 150 << "g) "; break;
+            case 4: cout << 150 << "g) "; break;
+            case 5: cout << 150 << "g) "; break;
+            case 6: cout << 200 << "g) "; break;
+            case 7: cout << 200 << "g) "; break;
+            case 8: cout << 200 << "g) "; break;
+            case 9: cout << 10 << "개) "; break;
+            case 10: cout << 300 << "g) "; break;
+            case 11: cout << 100 << "g) "; break;
+            default: break;
+        }
+        buyCnt = inputInteger("구매하실 묶음을 입력해주세요 : ");
         buyMoney = BI.ProductCntDecreament(IL, menuNum, buyCnt);
         BI.IngredientCntIncreament(IL, menuNum, buyCnt);
         BI.MoneyIncreament(MBP[i], buyMoney);
@@ -138,7 +156,7 @@ void buyMenu(IngredientList& IL, MoneyBox* MBP, int& i) {
 }
 
 void viewMenu(MoneyBox* MBP, ProductTotal* PTP, IngredientList& IL, int& i) {
-    const char* menuList[] = { "판매 수량","재고 수량","통장 내역","목표 매출 출력","종료" };
+    const char* menuList[] = { "판매 현황","재고 현황","회계 내역","목표 매출","종료" };
     int menuCnt = sizeof(menuList) / sizeof(menuList[0]);
     int menuNum;
     displayTitle("장부");
@@ -158,7 +176,12 @@ void viewMenu(MoneyBox* MBP, ProductTotal* PTP, IngredientList& IL, int& i) {
 }
 
 bool deadLine(MoneyBox* MBP, int& i) {
-    for (int j = 0; j <= i; j++){
+    MBP[i].setTax();
+    MBP[i].setProfit();
+    MBP[i].setGoalSellM();
+    MBP[i].setBePoint();
+    for (int j = 0; j <= i; j++) {
+        
         cout << "===========" << j + 1 << "번째 달 내역" << "============" << endl;
         MBP[j].stateView();
         cout << "=====================================" << endl;
@@ -166,14 +189,18 @@ bool deadLine(MoneyBox* MBP, int& i) {
     if ( MBP[i-1].getBePoint() >= MBP[i].getProfit() ) {//지난달 손익분기점을 지금현재의순이익이 못넘었을때 return false;
         //        cout <<MBP[i-1].getBePoint() << endl;
         //        cout <<MBP[i].getProfit() << endl;
-        cout << "망해서 강제종료";
+        cout << "손익분기점: " << MBP[i-1].getBePoint() << endl;
+        cout << "손익분기점을 넘지 못해서 쫒겨났어요";
         return false;
-    }    //망했어요
+    } else {
+        MBP[i+1].setSellM(MBP[i].getProfit()*0.7);
+    }
+    cout << "손익분기점: " << MBP[i-1].getBePoint() << endl;
     if ( MBP[i-1].getGoalSellM() <= MBP[i].getSellM() ) {//흑자 , 적자에 따른 것 검사 문구로 표현해준다.
-        cout << "흑자 ! 이번달 열심히 했네요!";
+        cout << "목표 달성! 더 하세요";
     }
     else{
-        cout << " 적자! 다음달은 더 힘내세요 !";
+        cout << "목표 미달! 더 하세요";
     }
     i++;
     return true;
