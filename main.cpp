@@ -31,7 +31,7 @@ int main() {
 }
 
 void screen(ProductList& PL, IngredientList& IL, int month_cnt) {
-    const char* menuList[] = { "판매","재고","장부","마감하기" };
+    const char* menuList[] = { "판매","구매","장부","마감하기" };
     int i=1;
     int menuCnt = sizeof(menuList)/sizeof(menuList[0]);
     int menuNum;
@@ -105,10 +105,13 @@ void sellMenu(ProductList& PL, IngredientList& IL, ProductTotal* PTP, MoneyBox* 
         menuNum = menu(menuList, menuCnt);
         if (menuNum == menuCnt) { break; }
         sellCnt = inputInteger("몇 잔 판매 하시겠습니까? : ");
-        SP.IngredientCntDecreament(IL, menuNum, sellCnt);
-        sellMoney = SP.ProductCntIncreament(PL, menuNum, sellCnt);
-        SP.MoneyIncreament(MBP[i], sellMoney);
-        PTP[i].addSellCount(menuNum-1, sellCnt);
+        if (SP.IngredientCntDecreament(IL, menuNum, sellCnt) != false) {
+            sellMoney = SP.ProductCntIncreament(PL, menuNum, sellCnt);
+            SP.MoneyIncreament(MBP[i], sellMoney);
+            PTP[i].addSellCount(menuNum-1, sellCnt);
+        } else {
+            cout << "재료 재고가 부족하여 판매하지 못했습니다" << endl;
+        }
     }
     displayTitle("판매 종료");
     return;
@@ -175,7 +178,8 @@ bool deadLine(MoneyBox* MBP, int& i) {
     MBP[i].setProfit();
     MBP[i].setGoalSellM();
     MBP[i].setBePoint();
-    for (int j = 0; j <= i; j++) {
+    int j;
+    for (j = 0; j <= i; j++) {
         
         cout << "===========" << j + 1 << "번째 달 내역" << "============" << endl;
         MBP[j].stateView();
@@ -192,9 +196,8 @@ bool deadLine(MoneyBox* MBP, int& i) {
     }
     cout << "손익분기점: " << MBP[i-1].getBePoint() << endl;
     if ( MBP[i-1].getGoalSellM() <= MBP[i].getSellM() ) {//흑자 , 적자에 따른 것 검사 문구로 표현해준다.
-        cout << "목표 달성! 더 하세요";
-    }
-    else{
+        cout << "목표 달성! 고생했어요";
+    } else {
         cout << "목표 미달! 더 하세요";
     }
     i++;
@@ -215,7 +218,7 @@ int inputInteger(char* message) {
         cout << message;
         cin >> number;
         
-        if (cin.get() == '\n') {
+        if (number>0 && cin.get() == '\n') {
             return number;
         }
         
@@ -230,8 +233,8 @@ int inputInteger(string message) {
     while (1) {
         cout << message;
         cin >> number;
-        
-        if (cin.get() == '\n') {
+            
+        if (number>0 && cin.get() == '\n') {
             return number;
         }
         
