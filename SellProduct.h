@@ -2,34 +2,34 @@
 #include "IngredientList.h"
 #include "MoneyBox.h"
 #include "ProductList.h"
-#define DE_COFFEEBEAN
-#define DE_MILK
-#define DE_CHOCO
-#define DE_BLACKTEABAG
-#define DE_GREENTEABAG
-#define DE_CIDER
-#define DE_STRAWBERRY
-#define DE_LEMON
-#define DE_EGG
-#define DE_FLOUR
-#define DE_SUGAR
+#define DE_COFFEEBEAN 100
+#define DE_MILK 100
+#define DE_CHOCO 100
+#define DE_BLACKTEABAG 100
+#define DE_GREENTEABAG 100
+#define DE_CIDER 100
+#define DE_STRAWBERRY 100
+#define DE_LEMON 100
+#define DE_EGG 100
+#define DE_FLOUR 100
+#define DE_SUGAR 100
 
 
 class SellProduct {
 public:
-	int ProductCntIncreament(ProductList &PL, int count, int index) {
+	int ProductCntIncreament(ProductList &PL, int index, int count) {
 		int sellM;
 		switch (index) {
-		case 1:sellM = PL.getAmericanoPrice() * count; break;
-		case 2:sellM = PL.getCaffeLattePrice() * count; break;
-		case 3:sellM = PL.getCaffeMochaPrice() * count; break;
-		case 4:sellM = PL.getGreenTeaPrice() * count; break;
-		case 5:sellM = PL.getBlackTeaPrice() * count; break;
-		case 6:sellM = PL.getStrawberryAdePrice() * count; break;
-		case 7:sellM = PL.getLemonadePrice() * count; break;
-		case 8:sellM = PL.getStrawberrysmoothiePrice() * count; break;
-		case 9:sellM = PL.getChocosmoothiePrice() * count; break;
-		default: break;
+		case 1: sellM = PL.getAmericanoPrice() * count; break;
+		case 2: sellM = PL.getCaffeLattePrice() * count; break;
+		case 3: sellM = PL.getCaffeMochaPrice() * count; break;
+		case 4: sellM = PL.getGreenTeaPrice() * count; break;
+		case 5: sellM = PL.getBlackTeaPrice() * count; break;
+		case 6: sellM = PL.getStrawberryAdePrice() * count; break;
+		case 7: sellM = PL.getLemonadePrice() * count; break;
+		case 8: sellM = PL.getStrawberrysmoothiePrice() * count; break;
+		case 9: sellM = PL.getChocosmoothiePrice() * count; break;
+        default: sellM=0; break;
 		}
 
 		return sellM;
