@@ -24,7 +24,7 @@ public:
 	int ProductCntIncreament(ProductList &PL, int index, int count) {
 		int sellM;
 		switch (index) {
-            case 1: cout << "디이: " << PL.getAmericanoPrice() << endl; sellM = PL.getAmericanoPrice() * count; break;
+        case 1: sellM = PL.getAmericanoPrice() * count; break;
 		case 2: sellM = PL.getCaffeLattePrice() * count; break;
 		case 3: sellM = PL.getCaffeMochaPrice() * count; break;
 		case 4: sellM = PL.getGreenTeaPrice() * count; break;
