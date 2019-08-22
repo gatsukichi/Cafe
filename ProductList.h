@@ -1,7 +1,8 @@
-#pragma once
+#ifndef PRODUCTLIST_H_
+#define PRODUCTLIST_H_
+
 #include<string>
 using namespace std;
-
 #include"Product.h"
 
 class ProductList{
@@ -73,3 +74,5 @@ public:
 //     }
 
 };
+
+#endif /* PRODUCTLIST_H_ */
