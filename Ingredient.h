@@ -8,7 +8,7 @@ private:
 public:
 	CoffeeBean(){
 		gram = 0;
-		price = 0;
+		price = 10;
 	}
     double getCoffeeBeanGram() const{
         return this->gram;
@@ -34,7 +34,7 @@ private:
 public:
 	Milk(){
 		gram = 0;
-		price = 0;
+		price = 10;
 	}
     double getMilkGram() const{
         return this->gram;
@@ -45,7 +45,7 @@ public:
     void setMilkGram(double gram){
         this->gram = gram;
     }
-	    void decreaseMilkGram(double gram){
+    void decreaseMilkGram(double gram){
         this->gram -= gram;
     }
     void increaseMilkGram(double gram){
@@ -61,7 +61,7 @@ private:
 public:
 	Choco(){
 		gram = 0;
-		price = 0;
+		price = 10;
 	}
     double getChocoGram() const{
         return this->gram;
@@ -87,7 +87,7 @@ private:
 public:
 	BlackTeaBag() {
 		gram = 0;
-		price = 0;
+		price = 10;
 	}
     double getBlackTeaBagGram() const{
         return this->gram;
@@ -114,7 +114,7 @@ private:
 public:
 	GreenTeaBag() {
 		gram = 0;
-		price = 0;
+		price = 10;
 	}
     double getGreenTeaBagGram() const{
         return this->gram;
@@ -140,7 +140,7 @@ private:
 public:
 	Cider() {
 		gram = 0;
-		price = 0;
+		price = 10;
 	}
     double getCiderGram() const{
         return this->gram;
@@ -166,7 +166,7 @@ private:
 public:
 	Strawberry() {
 		gram = 0;
-		price = 0;
+		price = 10;
 	}
     double getStrawberryGram() const{
         return this->gram;
@@ -192,7 +192,7 @@ private:
 public:
 	Lemon() {
 		gram = 0;
-		price = 0;
+		price = 10;
 	}
     double getLemonGram() const{
         return this->gram;
@@ -218,7 +218,7 @@ private:
 public:
 	Egg() {
 		count = 0;
-		price = 0;
+		price = 10;
 	}
 	int getEggCount() const{
 		return this->count;
@@ -243,7 +243,7 @@ private:
 public:
 	Flour() {
 		gram = 0;
-		price = 0;
+		price = 10;
 	}
 	int getFlourGram() const{
 		return this->gram;
@@ -268,7 +268,7 @@ private:
 public:
 	Sugar() {
 		gram = 0;
-		price = 0;
+		price = 10;
 	}
 	int getSugarGram() const{
 		return this->gram;
